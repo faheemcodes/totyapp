@@ -21,10 +21,10 @@ auth = dash_auth.BasicAuth(
     VALID_USERNAME_PASSWORD_PAIRS
 )
 
-path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
-os.chdir(path)
-files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
-ledgerFile = files[-1]
+#path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
+#os.chdir(path)
+#files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
+#ledgerFile = files[-1]
 
 today = date(2021,1,9)
 start_date = date(2021,1,4)
@@ -80,7 +80,7 @@ date = inddf['Date'].unique().max()
 inddf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
 
 live = pd.read_excel(fileName, sheet_name = 'Live', skiprows = 3, converters= {'Date': pd.to_datetime})
-ledger = pd.read_excel(ledgerFile, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
+ledger = pd.read_excel(fileName, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
 #live = ledger[ledger['Status']=='Y']
 industrydf = live.groupby('Industry').size().reset_index()
 industrydf.columns = ['Industry', 'Count']
