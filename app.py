@@ -21,12 +21,12 @@ server = app.server
 #    VALID_USERNAME_PASSWORD_PAIRS
 #)
 
-currentPath = os.getcwd()
-path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
-os.chdir(path)
-files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
-ledgerFile = files[-1]
-os.chdir(currentPath)
+#currentPath = os.getcwd()
+#path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
+#os.chdir(path)
+#files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
+#ledgerFile = files[-1]
+#os.chdir(currentPath)
 
 today = date(2021,1,9)
 start_date = date(2021,1,4)
