@@ -9,13 +9,13 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Output, Input 
 import dash_table as dt
 
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE])
+server = app.server
+
 path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
 os.chdir(path)
 files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
 newestFile = files[-1]
-
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE])
-server = app.server
 
 today = date(2021,1,7)
 start_date = date(2021,1,4)
