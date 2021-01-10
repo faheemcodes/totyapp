@@ -9,6 +9,11 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Output, Input 
 import dash_table as dt
 
+path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
+os.chdir(path)
+files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
+newestFile = files[-1]
+
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE])
 server = app.server
 
@@ -72,7 +77,7 @@ leaderdf = inddf[inddf['Date']== str(date)].sort_values(by=['Total'], ascending=
 leaderdf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
 
 
-ledger = pd.read_excel(fileName, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
+ledger = pd.read_excel(newestFile, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
 
 tabs_styles = {
     'height': '30px',
