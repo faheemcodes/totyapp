@@ -109,7 +109,7 @@ tab_selected_style = {
 app.layout = html.Div([
     html.Div(style={'height':75, 'margin-left':400, 'margin-right':400}, children = [
         html.Br(),
-        html.H3('Trade of the year !!!!', style={"textAlign": "center", 'fontColor': 'white', 'margin-top':1, 'padding-top': '0rem'}),
+        html.H3('Trade of the year', style={"textAlign": "center", 'fontColor': 'white', 'margin-top':1, 'padding-top': '0rem'}),
         html.Br()
         ], className = 'rows'),
 
