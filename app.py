@@ -8,19 +8,20 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Output, Input 
 import dash_table as dt
-#import dash_auth
+import dash_auth
 
-#VALID_USERNAME_PASSWORD_PAIRS = {'faheemkk': 'pass'}
+VALID_USERNAME_PASSWORD_PAIRS = {'faheemkk': 'pass'}
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE], meta_tags=[
-        {"name": "viewport", "content": "width=device-width, initial-scale=1"}
-    ])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE], 
+                #meta_tags=[
+                #{"name": "viewport", "content": "width=device-width, initial-scale=1"}]
+                )
 server = app.server
 
-#auth = dash_auth.BasicAuth(
-#    app,
-#    VALID_USERNAME_PASSWORD_PAIRS
-#)
+auth = dash_auth.BasicAuth(
+    app,
+    VALID_USERNAME_PASSWORD_PAIRS
+)
 
 #currentPath = os.getcwd()
 #path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
