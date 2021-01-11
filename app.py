@@ -27,7 +27,7 @@ server = app.server
 #ledgerFile = files[-1]
 #os.chdir(currentPath)
 
-today = date(2021,1,9)
+today = date.today()
 start_date = date(2021,1,4)
 fileName = 'assets/Trade of the year_Final.xlsm'
 
