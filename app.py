@@ -12,7 +12,9 @@ import dash_table as dt
 
 #VALID_USERNAME_PASSWORD_PAIRS = {'faheemkk': 'pass'}
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE], meta_tags=[
+        {"name": "viewport", "content": "width=device-width, initial-scale=1"}
+    ])
 server = app.server
 
 #auth = dash_auth.BasicAuth(
@@ -151,7 +153,7 @@ def tab1():
                         dbc.ListGroupItem("Overall Growth", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
                         dbc.ListGroupItem("DAA Portfolio : " + str(totGrowth) + '%',color=totGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
                         dbc.ListGroupItem("CPP Total Fund : " + str(cppGrowth) + '%',color=cppGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
-                        dbc.ListGroupItem("* growth from 4th Jan 2021", style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
+                        dbc.ListGroupItem("* from 4th Jan 2021", style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
                     ], style={'backgroundColor': 'rgba(0, 0, 0, 0)', 'padding-top': '0rem', 'padding-left': '0rem', 'border':'0px solid black'}),
                 ],style={"width": "17%", 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'margin-left':30})
             ], className = 'row'),
