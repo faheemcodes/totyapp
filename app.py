@@ -20,7 +20,7 @@ auth = dash_auth.BasicAuth(
     VALID_USERNAME_PASSWORD_PAIRS
 )
 
-ledgerFile = r'/assets/ledgerBackup/ledger.xlsx'
+ledgerFile = 'assets/ledgerBackup/ledger.xlsx'
 
 today = date.today()
 start_date = date(2021,1,4)
