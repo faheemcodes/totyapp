@@ -23,12 +23,25 @@ ledgerFile = 'assets/ledgerBackup/ledger.xlsx'
 
 today = date.today()
 start_date = date(2021,1,4)
-fileName = 'assets/Trade of the year_Final.xlsm'
 
 totdf = pd.read_csv('assets/TotalPortfolio_' + str(today) + '.csv')
 cppdf = pd.read_csv('assets/totalFund.csv')
-cppdf = cppdf[cppdf['Date'] >= str(start_date)]
+sp500 = pd.read_csv('assets/sp500.csv')
+#cppdf = cppdf[cppdf['Date'] >= str(start_date)]
 totdf['Name'] = 'DAA Portfolio'
+
+cppdf['Name'], sp500['Name'] = 'CPP Portfolio', 'S&P 500 Index'
+cppdf['stockSum'], sp500['stockSum'] = '', ''
+cppdf['cashSum'], sp500['cashSum'] = '', ''
+base_price = cppdf.iloc[0]['totalSum']
+cppdf['Growth'] = cppdf['totalSum']/base_price
+
+base_price = sp500.iloc[0]['totalSum']
+sp500['Growth'] = sp500['totalSum']/base_price
+
+totdf = pd.concat([totdf, cppdf, sp500])
+
+
 totPercent = round((totdf.iloc[-1]['totalSum']-totdf.iloc[-2]['totalSum'])/totdf.iloc[-2]['totalSum']*100,2)
 cppPercent = round((cppdf.iloc[-1]['totalSum']-cppdf.iloc[-2]['totalSum'])/cppdf.iloc[-2]['totalSum']*100,2)
 totGrowth = round((totdf.iloc[-1]['Growth']-1)*100,2)
@@ -62,19 +75,13 @@ elif cppGrowth == 0:
 else:
     cppGrowthColor = 'danger'
 
-cppdf['Name'] = 'CPP Portfolio'
-cppdf['stockSum'] = ''
-cppdf['cashSum'] = ''
-base_price = cppdf.iloc[0]['totalSum']
-cppdf['Growth'] = cppdf['totalSum']/base_price
-totdf = pd.concat([totdf, cppdf])
+
 
 
 inddf = pd.read_csv('assets/IndividualPortfolio_' + str(today) + '.csv')
 date = inddf['Date'].unique().max()
 inddf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
 
-#live = pd.read_excel(fileName, sheet_name = 'Live', skiprows = 3, converters= {'Date': pd.to_datetime})
 ledger = pd.read_excel(ledgerFile, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
 live = ledger[ledger['Status']=='Y']
 industrydf = live.groupby('Industry').size().reset_index()
