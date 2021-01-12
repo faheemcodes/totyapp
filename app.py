@@ -20,7 +20,7 @@ auth = dash_auth.BasicAuth(
     VALID_USERNAME_PASSWORD_PAIRS
 )
 
-path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
+path = r'/assets/ledgerBackup/'
 os.chdir(path)
 files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
 ledgerFile = files[-1]
