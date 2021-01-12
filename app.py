@@ -20,10 +20,7 @@ auth = dash_auth.BasicAuth(
     VALID_USERNAME_PASSWORD_PAIRS
 )
 
-path = r'/assets/ledgerBackup/'
-os.chdir(path)
-files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
-ledgerFile = files[-1]
+ledgerFile = r'/assets/ledgerBackup/ledger.xlsx'
 
 today = date.today()
 start_date = date(2021,1,4)
