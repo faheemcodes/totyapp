@@ -44,8 +44,11 @@ totdf = pd.concat([totdf, cppdf, sp500])
 
 totPercent = round((totdf.iloc[-1]['totalSum']-totdf.iloc[-2]['totalSum'])/totdf.iloc[-2]['totalSum']*100,2)
 cppPercent = round((cppdf.iloc[-1]['totalSum']-cppdf.iloc[-2]['totalSum'])/cppdf.iloc[-2]['totalSum']*100,2)
+spPercent = round((sp500.iloc[-1]['totalSum']-sp500.iloc[-2]['totalSum'])/sp500.iloc[-2]['totalSum']*100,2)
+
 totGrowth = round((totdf.iloc[-1]['Growth']-1)*100,2)
 cppGrowth = round((cppdf.iloc[-1]['totalSum']/cppdf.iloc[0]['totalSum']-1)*100,2)
+spGrowth = round((sp500.iloc[-1]['totalSum']/sp500.iloc[0]['totalSum']-1)*100,2)
 
 if totPercent > 0:
     totColor = 'success'
@@ -61,6 +64,13 @@ elif cppPercent == 0:
 else:
     cppColor = 'danger'
 
+if spPercent > 0:
+    spColor = 'success'
+elif spPercent == 0:
+    spColor = 'warning'
+else:
+    spColor = 'danger'
+
 if totGrowth > 0:
     totGrowthColor = 'success'
 elif totGrowth == 0:
@@ -75,6 +85,12 @@ elif cppGrowth == 0:
 else:
     cppGrowthColor = 'danger'
 
+if spGrowth > 0:
+    spGrowthColor = 'success'
+elif spGrowth == 0:
+    spGrowthColor = 'warning'
+else:
+    spGrowthColor = 'danger'
 
 
 
@@ -146,12 +162,14 @@ def tab1():
                         dbc.ListGroupItem("Daily Changes", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
                         dbc.ListGroupItem("DAA Portfolio : " + str(totPercent) + "%" ,color=totColor, style={'fontSize': '13px', 'textAlign': 'center'}),
                         dbc.ListGroupItem("CPP Total Fund : " + str(cppPercent) + "%" ,color=cppColor, style={'fontSize': '13px', 'textAlign': 'center'}),
+                        dbc.ListGroupItem("S&P 500 Index : " + str(spPercent) + "%" ,color=spColor, style={'fontSize': '13px', 'textAlign': 'center'}),
                     ], style={'backgroundColor': 'rgba(0, 0, 0, 0)', 'padding-top': '0rem', 'padding-left': '0rem', 'border':'0px solid black'}),
                 dbc.CardBody(
                     [
                         dbc.ListGroupItem("Overall Growth", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
                         dbc.ListGroupItem("DAA Portfolio : " + str(totGrowth) + '%',color=totGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
                         dbc.ListGroupItem("CPP Total Fund : " + str(cppGrowth) + '%',color=cppGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
+                        dbc.ListGroupItem("S&P 500 Index : " + str(spGrowth) + '%',color=spGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
                         dbc.ListGroupItem("* from 4th Jan 2021", style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
                     ], style={'backgroundColor': 'rgba(0, 0, 0, 0)', 'padding-top': '0rem', 'padding-left': '0rem', 'border':'0px solid black'}),
                 ],style={"width": "17%", 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'margin-left':30})
