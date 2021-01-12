@@ -12,10 +12,7 @@ import dash_auth
 
 VALID_USERNAME_PASSWORD_PAIRS = {'faheemkk': 'pass'}
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE], 
-                #meta_tags=[
-                #{"name": "viewport", "content": "width=device-width, initial-scale=1"}]
-                )
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE])
 server = app.server
 
 auth = dash_auth.BasicAuth(
@@ -23,12 +20,10 @@ auth = dash_auth.BasicAuth(
     VALID_USERNAME_PASSWORD_PAIRS
 )
 
-#currentPath = os.getcwd()
-#path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
-#os.chdir(path)
-#files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
-#ledgerFile = files[-1]
-#os.chdir(currentPath)
+path = r'C:/Users/FaheemKK/Desktop/Toty/totyapp/assets/ledgerBackup/'
+os.chdir(path)
+files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
+ledgerFile = files[-1]
 
 today = date.today()
 start_date = date(2021,1,4)
@@ -83,9 +78,9 @@ inddf = pd.read_csv('assets/IndividualPortfolio_' + str(today) + '.csv')
 date = inddf['Date'].unique().max()
 inddf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
 
-live = pd.read_excel(fileName, sheet_name = 'Live', skiprows = 3, converters= {'Date': pd.to_datetime})
-ledger = pd.read_excel(fileName, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
-#live = ledger[ledger['Status']=='Y']
+#live = pd.read_excel(fileName, sheet_name = 'Live', skiprows = 3, converters= {'Date': pd.to_datetime})
+ledger = pd.read_excel(ledgerFile, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
+live = ledger[ledger['Status']=='Y']
 industrydf = live.groupby('Industry').size().reset_index()
 industrydf.columns = ['Industry', 'Count']
 leaderdf = inddf[inddf['Date']== str(date)].sort_values(by=['Total'], ascending=False)[:5].sort_values(by=['Total'], ascending=True)
