@@ -102,19 +102,20 @@ ledger = pd.read_excel(ledgerFile, sheet_name = 'Ledger', skiprows = 4, converte
 live = ledger[ledger['Status']=='Y']
 industrydf = live.groupby('Industry').size().reset_index()
 industrydf.columns = ['Industry', 'Count']
-leaderboard = inddf[inddf['Date']== str(date)].sort_values(by=['Total'], ascending=False).sort_values(by=['Total'], ascending=False)
+leaderboard = inddf[inddf['Date']== str(date)].sort_values(by=['Total', 'Name'], ascending=False)
 leaderboard.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
-leaderboard = leaderboard[['Name', 'Stocks', 'Cash', 'Total']]
 leaderboard.insert(0, 'Rank', range(1, 1 + len(leaderboard)))
+leaderboard = leaderboard[['Rank', 'Name', 'Stocks', 'Cash', 'Total']]
 columns = [{"name": i, "id": i} for i in leaderboard.columns]
 leaderdf = leaderboard[:5].sort_values(by=['Total'], ascending=True)
+
 
 tabs_styles = {
     'height': '30px',
     'width' : '45%'
 }
 tab_style = {
-    'padding': '1.2px',
+    'padding': '2px',
     'backgroundColor': '#444444',
     'fontColor': 'black',
     'border': '0px solid grey'
@@ -122,7 +123,7 @@ tab_style = {
 tab_selected_style = {
     'backgroundColor': '#296d98',
     'color': 'white',
-    'padding': '1.2px',
+    'padding': '2px',
     'border': '0px solid grey'
 }
 
@@ -255,7 +256,7 @@ def tab4():
             dcc.Dropdown(
                             id='indDropDown', 
                             multi=False, 
-                            value="Alex Tait",
+                            value="",
                             options=[{'label': x, 'value': x} for x in sorted(inddf['Name'].unique())]
                         ),
         ],style={"width": "20%", 'margin-left':10}),
