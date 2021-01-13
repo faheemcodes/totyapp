@@ -102,8 +102,12 @@ ledger = pd.read_excel(ledgerFile, sheet_name = 'Ledger', skiprows = 4, converte
 live = ledger[ledger['Status']=='Y']
 industrydf = live.groupby('Industry').size().reset_index()
 industrydf.columns = ['Industry', 'Count']
-leaderdf = inddf[inddf['Date']== str(date)].sort_values(by=['Total'], ascending=False)[:5].sort_values(by=['Total'], ascending=True)
-leaderdf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
+leaderboard = inddf[inddf['Date']== str(date)].sort_values(by=['Total'], ascending=False).sort_values(by=['Total'], ascending=False)
+leaderboard.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
+leaderboard = leaderboard[['Name', 'Stocks', 'Cash', 'Total']]
+leaderboard.insert(0, 'Rank', range(1, 1 + len(leaderboard)))
+columns = [{"name": i, "id": i} for i in leaderboard.columns]
+leaderdf = leaderboard[:5].sort_values(by=['Total'], ascending=True)
 
 tabs_styles = {
     'height': '30px',
@@ -126,7 +130,7 @@ tab_selected_style = {
 app.layout = html.Div([
     html.Div(style={'height':75, 'margin-left':400, 'margin-right':400}, children = [
         html.Br(),
-        html.H3('Trade of the year !!', style={"textAlign": "center", 'fontColor': 'white', 'margin-top':1, 'padding-top': '0rem'}),
+        html.H3('Trade of the year !', style={"textAlign": "center", 'fontColor': 'white', 'margin-top':1, 'padding-top': '0rem'}),
         html.Br()
         ], className = 'rows'),
 
@@ -215,28 +219,17 @@ def tab2():
                     ),
         dcc.Graph(id='compLineChart', figure={}), 
         html.Br(),
+        html.H5('Complete Leaderboard', style={"textAlign": "left", 'fontColor': 'rgba(255,170,0,100)', 'margin-left':2, 'padding-top': '0rem'}),
         html.Br(),
-        dt.DataTable(id='leaderTable'),
         html.Div([
             dt.DataTable(
                 id='leaderTable',
+                data = leaderboard.to_dict('records'),
+                columns = columns,
                 style_cell={'textAlign': 'center',
                             'backgroundColor': 'rgba(0, 0, 0, 0)'
                             }, 
-                style_cell_conditional=[
-                    {
-                        'if': {'column_id': c},
-                        'textAlign': 'center'
-                    } for c in ['Date', 'Region']
-                ],
                 style_data={'border': '1px solid black'},
-                style_data_conditional=[
-                    {
-                        'if': {'filter_query': '{Status} eq Y'},
-                        # 'backgroundColor': 'rgb(80, 80, 80)',
-                        'color' : 'orange'
-                    }
-                ],
                 style_header={
                     'backgroundColor': 'rgb(0, 49, 82)',
                     'fontWeight': 'bold',
@@ -258,7 +251,6 @@ def tab3():
                         ),
         ],style={"width": "20%", 'margin-left':10}),
         html.Br(),
-        #html.Div(id='table'),
         html.Div([
             dt.DataTable(
                 id='table',
@@ -304,26 +296,16 @@ def displayClick(btn1, btn2):
     return comparisonList
 
 
-
 @app.callback(  [Output('table', 'data'),
                 Output('table', 'columns')],
                 Input('indDropDown', 'value'))
-def update_rows1(value):
+def update_rows(value):
     dff = ledger[ledger['Name'] == value]
     dff = dff[['Date','Ticker Name', 'Exchange', 'Quantity', 'Cash', 'Status', 'Industry', 'Instrument' ]]
     columns = [{"name": i, "id": i} for i in dff.columns]
-    # return [dt.DataTable(data=dff, columns=columns)]
     return dff.to_dict('records'), columns
 
 
-@app.callback(  [Output('leaderTable', 'data'),
-                Output('leaderTable', 'columns')],
-                Input('indDropDown', 'value'))
-def update_rows2(value):
-    dff = leaderdf[['Name', 'Stocks', 'Cash', 'Total']]
-    columns = [{"name": i, "id": i} for i in dff.columns]
-    # return [dt.DataTable(data=dff, columns=columns)]
-    return dff.to_dict('records'), columns
 
 @app.callback(Output('totLineChart', 'figure'),
                 Input('tabs-styled-with-inline', 'value'))  
