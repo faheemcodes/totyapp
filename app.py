@@ -126,7 +126,7 @@ tab_selected_style = {
 app.layout = html.Div([
     html.Div(style={'height':75, 'margin-left':400, 'margin-right':400}, children = [
         html.Br(),
-        html.H3('Trade of the year', style={"textAlign": "center", 'fontColor': 'white', 'margin-top':1, 'padding-top': '0rem'}),
+        html.H3('Trade of the year !!', style={"textAlign": "center", 'fontColor': 'white', 'margin-top':1, 'padding-top': '0rem'}),
         html.Br()
         ], className = 'rows'),
 
@@ -214,6 +214,9 @@ def tab2():
                         options=[{'label': x, 'value': x} for x in sorted(inddf['Name'].unique())]
                     ),
         dcc.Graph(id='compLineChart', figure={}), 
+        html.Br(),
+        html.Br(),
+        dt.DataTable(id='leaderTable'),
         html.Div([
             dt.DataTable(
                 id='leaderTable',
@@ -239,7 +242,7 @@ def tab2():
                     'fontWeight': 'bold',
                     'border': '1px solid black'
                 })
-            ],style={"width": "50%", 'margin-left':10}),
+            ],style={"width": "60%", 'margin-left':10}),
         ], style={'margin-left':40, 'margin-right':40})
     return layout
 
@@ -255,7 +258,7 @@ def tab3():
                         ),
         ],style={"width": "20%", 'margin-left':10}),
         html.Br(),
-        html.Div(id='table'),
+        #html.Div(id='table'),
         html.Div([
             dt.DataTable(
                 id='table',
@@ -305,7 +308,7 @@ def displayClick(btn1, btn2):
 @app.callback(  [Output('table', 'data'),
                 Output('table', 'columns')],
                 Input('indDropDown', 'value'))
-def update_rows(value):
+def update_rows1(value):
     dff = ledger[ledger['Name'] == value]
     dff = dff[['Date','Ticker Name', 'Exchange', 'Quantity', 'Cash', 'Status', 'Industry', 'Instrument' ]]
     columns = [{"name": i, "id": i} for i in dff.columns]
@@ -314,12 +317,13 @@ def update_rows(value):
 
 
 @app.callback(  [Output('leaderTable', 'data'),
-                Output('leaderTable', 'columns')]
-                #Input('indDropDown', 'value'))
-def update_rows():
-    columns = [{"name": i, "id": i} for i in leaderdf.columns]
+                Output('leaderTable', 'columns')],
+                Input('indDropDown', 'value'))
+def update_rows2(value):
+    dff = leaderdf[['Name', 'Stocks', 'Cash', 'Total']]
+    columns = [{"name": i, "id": i} for i in dff.columns]
     # return [dt.DataTable(data=dff, columns=columns)]
-    return leaderdf.to_dict('records'), columns
+    return dff.to_dict('records'), columns
 
 @app.callback(Output('totLineChart', 'figure'),
                 Input('tabs-styled-with-inline', 'value'))  
