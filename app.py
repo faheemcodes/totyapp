@@ -213,7 +213,33 @@ def tab2():
                         # value=comparisonList,
                         options=[{'label': x, 'value': x} for x in sorted(inddf['Name'].unique())]
                     ),
-        dcc.Graph(id='compLineChart', figure={})
+        dcc.Graph(id='compLineChart', figure={}), 
+        html.Div([
+            dt.DataTable(
+                id='leaderTable',
+                style_cell={'textAlign': 'center',
+                            'backgroundColor': 'rgba(0, 0, 0, 0)'
+                            }, 
+                style_cell_conditional=[
+                    {
+                        'if': {'column_id': c},
+                        'textAlign': 'center'
+                    } for c in ['Date', 'Region']
+                ],
+                style_data={'border': '1px solid black'},
+                style_data_conditional=[
+                    {
+                        'if': {'filter_query': '{Status} eq Y'},
+                        # 'backgroundColor': 'rgb(80, 80, 80)',
+                        'color' : 'orange'
+                    }
+                ],
+                style_header={
+                    'backgroundColor': 'rgb(0, 49, 82)',
+                    'fontWeight': 'bold',
+                    'border': '1px solid black'
+                })
+            ],style={"width": "50%", 'margin-left':10}),
         ], style={'margin-left':40, 'margin-right':40})
     return layout
 
@@ -287,6 +313,14 @@ def update_rows(value):
     return dff.to_dict('records'), columns
 
 
+@app.callback(  [Output('leaderTable', 'data'),
+                Output('leaderTable', 'columns')]
+                #Input('indDropDown', 'value'))
+def update_rows():
+    columns = [{"name": i, "id": i} for i in leaderdf.columns]
+    # return [dt.DataTable(data=dff, columns=columns)]
+    return leaderdf.to_dict('records'), columns
+
 @app.callback(Output('totLineChart', 'figure'),
                 Input('tabs-styled-with-inline', 'value'))  
 def display_value(value):
@@ -323,7 +357,7 @@ def display_value(value):
                                     'paper_bgcolor': 'rgba(0, 0, 0, 0)'}).update_layout(
                                     font_color="white",
                                     title_font_color="orange",
-                                    legend_title_font_color="white"
+                                    legend_title_font_color="white", 
                                 ).update_traces(textposition='outside')
     return fig
 
