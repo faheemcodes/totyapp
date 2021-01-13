@@ -111,7 +111,7 @@ leaderdf = leaderboard[:5].sort_values(by=['Total'], ascending=True)
 
 tabs_styles = {
     'height': '30px',
-    'width' : '30%'
+    'width' : '45%'
 }
 tab_style = {
     'padding': '1.2px',
@@ -137,7 +137,8 @@ app.layout = html.Div([
     dcc.Tabs(id="tabs-styled-with-inline", value='tab-1', children=[
         dcc.Tab(label='Main', value='tab-1', style=tab_style, selected_style=tab_selected_style),
         dcc.Tab(label='Comparison', value='tab-2', style=tab_style, selected_style=tab_selected_style),
-        dcc.Tab(label='Individual', value='tab-3', style=tab_style, selected_style=tab_selected_style),
+        dcc.Tab(label='Leaderboard', value='tab-3', style=tab_style, selected_style=tab_selected_style),
+        dcc.Tab(label='Individual', value='tab-4', style=tab_style, selected_style=tab_selected_style),
     ], style=tabs_styles),
     html.Div(id='tabs-content-inline')
 ], style={'margin-left':40, 'margin-right':40})
@@ -152,6 +153,8 @@ def render_content(tab):
         return tab2()
     elif tab == 'tab-3':
         return tab3()
+    elif tab == 'tab-4':
+        return tab4()
 
 
 def tab1():
@@ -219,7 +222,12 @@ def tab2():
                     ),
         dcc.Graph(id='compLineChart', figure={}), 
         html.Br(),
-        html.H5('Complete Leaderboard', style={"textAlign": "left", 'fontColor': 'rgba(255,170,0,100)', 'margin-left':2, 'padding-top': '0rem'}),
+        ], style={'margin-left':40, 'margin-right':40})
+    return layout
+
+def tab3():
+    layout = html.Div([
+        html.Br(),
         html.Br(),
         html.Div([
             dt.DataTable(
@@ -236,10 +244,11 @@ def tab2():
                     'border': '1px solid black'
                 })
             ],style={"width": "60%", 'margin-left':10}),
-        ], style={'margin-left':40, 'margin-right':40})
+                    
+        ])
     return layout
-
-def tab3():
+    
+def tab4():
     layout = html.Div([
         html.Br(),
         html.Div([
@@ -280,6 +289,8 @@ def tab3():
                     
         ])
     return layout
+    
+
 
 @app.callback(Output('compDropDown', 'value'),
               Input('btn-nclicks-1', 'n_clicks'),
