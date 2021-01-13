@@ -9,7 +9,7 @@ from dash.dependencies import Output, Input
 import dash_table as dt
 import dash_auth
 
-VALID_USERNAME_PASSWORD_PAIRS = {'faheemkk': 'pass'}
+VALID_USERNAME_PASSWORD_PAIRS = {'toty': '123toty'}
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE])
 server = app.server
@@ -40,7 +40,6 @@ base_price = sp500.iloc[0]['totalSum']
 sp500['Growth'] = sp500['totalSum']/base_price
 
 finaldf = pd.concat([totdf, cppdf, sp500])
-
 
 totPercent = round((totdf.iloc[-1]['totalSum']-totdf.iloc[-2]['totalSum'])/totdf.iloc[-2]['totalSum']*100,2)
 cppPercent = round((cppdf.iloc[-1]['totalSum']-cppdf.iloc[-2]['totalSum'])/cppdf.iloc[-2]['totalSum']*100,2)
@@ -92,8 +91,6 @@ elif spGrowth == 0:
 else:
     spGrowthColor = 'danger'
 
-
-
 inddf = pd.read_csv('assets/IndividualPortfolio_' + str(today) + '.csv')
 date = inddf['Date'].unique().max()
 inddf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
@@ -108,7 +105,6 @@ leaderboard.insert(0, 'Rank', range(1, 1 + len(leaderboard)))
 leaderboard = leaderboard[['Rank', 'Name', 'Stocks', 'Cash', 'Total']]
 columns = [{"name": i, "id": i} for i in leaderboard.columns]
 leaderdf = leaderboard[:5].sort_values(by=['Total'], ascending=True)
-
 
 tabs_styles = {
     'height': '30px',
@@ -127,7 +123,6 @@ tab_selected_style = {
     'border': '0px solid grey'
 }
 
-
 app.layout = html.Div([
     html.Div(style={'height':75, 'margin-left':400, 'margin-right':400}, children = [
         html.Br(),
@@ -143,7 +138,6 @@ app.layout = html.Div([
     ], style=tabs_styles),
     html.Div(id='tabs-content-inline')
 ], style={'margin-left':40, 'margin-right':40})
-
 
 @app.callback(Output('tabs-content-inline', 'children'),
               Input('tabs-styled-with-inline', 'value'))
