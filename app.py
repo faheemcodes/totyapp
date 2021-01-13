@@ -27,16 +27,20 @@ start_date = date(2021,1,4)
 totdf = pd.read_csv('assets/TotalPortfolio_' + str(today) + '.csv')
 cppdf = pd.read_csv('assets/totalFund.csv')
 sp500 = pd.read_csv('assets/sp500.csv')
+#cppdf = cppdf[cppdf['Date'] >= str(start_date)]
 totdf['Name'] = 'DAA Portfolio'
 
 cppdf['Name'], sp500['Name'] = 'CPP Portfolio', 'S&P 500 Index'
 cppdf['stockSum'], sp500['stockSum'] = '', ''
 cppdf['cashSum'], sp500['cashSum'] = '', ''
-
 base_price = cppdf.iloc[0]['totalSum']
 cppdf['Growth'] = cppdf['totalSum']/base_price
+
 base_price = sp500.iloc[0]['totalSum']
 sp500['Growth'] = sp500['totalSum']/base_price
+
+finaldf = pd.concat([totdf, cppdf, sp500])
+
 
 totPercent = round((totdf.iloc[-1]['totalSum']-totdf.iloc[-2]['totalSum'])/totdf.iloc[-2]['totalSum']*100,2)
 cppPercent = round((cppdf.iloc[-1]['totalSum']-cppdf.iloc[-2]['totalSum'])/cppdf.iloc[-2]['totalSum']*100,2)
@@ -45,9 +49,6 @@ spPercent = round((sp500.iloc[-1]['totalSum']-sp500.iloc[-2]['totalSum'])/sp500.
 totGrowth = round((totdf.iloc[-1]['Growth']-1)*100,2)
 cppGrowth = round((cppdf.iloc[-1]['totalSum']/cppdf.iloc[0]['totalSum']-1)*100,2)
 spGrowth = round((sp500.iloc[-1]['totalSum']/sp500.iloc[0]['totalSum']-1)*100,2)
-
-totdf = pd.concat([totdf, cppdf, sp500])
-
 
 if totPercent > 0:
     totColor = 'success'
@@ -289,7 +290,7 @@ def update_rows(value):
 @app.callback(Output('totLineChart', 'figure'),
                 Input('tabs-styled-with-inline', 'value'))  
 def display_value(value):
-    fig = px.line(totdf, x='Date', y='Growth', color='Name', title='Growth - DAA & CPP Portfolio', template='plotly_dark').update_layout(
+    fig = px.line(finaldf, x='Date', y='Growth', color='Name', title='Growth - DAA & CPP Portfolio', template='plotly_dark').update_layout(
                                    {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                                     'paper_bgcolor': 'rgba(0, 0, 0, 0)'
                                     }).update_layout(
