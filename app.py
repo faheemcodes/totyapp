@@ -103,10 +103,8 @@ live = ledger[ledger['Status']=='Y']
 livedf = live[['Name','Ticker Name']]
 livedf.dropna(inplace=True, subset=['Ticker Name'])
 nameslist = livedf['Name'].unique()
-print(nameslist)
 livedict = dict((i, livedf[livedf['Name']==i]['Ticker Name'].unique().tolist()) for i in nameslist)
 #livedict = livedf.to_dict("list")
-print(livedict)
 names = list(livedict.keys())
 
 industrydf = live.groupby('Industry').size().reset_index()
@@ -312,9 +310,10 @@ def update_date_dropdown(name):
 
 
 @app.callback(Output('stockChart', 'figure'),
-                Input('stockDropDown', 'value'))  
-def display_value(value):
-    dff = historydf[historydf['Ticker']==value]
+                [Input('stockDropDown', 'value'),
+                Input('indDropDown', 'value')])  
+def display_value(value1, value2):
+    dff = historydf[(historydf['Ticker']==value1) & (historydf['Name']==value2)]
     fig = px.line(dff, x='Date', y='Price', color='Time', title='', template='plotly_dark').update_layout(
                                    {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                                     'paper_bgcolor': 'rgba(0, 0, 0, 0)'
