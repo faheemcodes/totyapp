@@ -27,6 +27,8 @@ start_date = date(2021,1,4)
 totdf = pd.read_csv('assets/TotalPortfolio_' + str(today) + '.csv')
 cppdf = pd.read_csv('assets/totalFund.csv')
 sp500 = pd.read_csv('assets/sp500.csv')
+historydf = pd.read_csv('assets/stockhistory.csv')
+
 #cppdf = cppdf[cppdf['Date'] >= str(start_date)]
 totdf['Name'] = 'DAA Portfolio'
 
@@ -97,6 +99,16 @@ inddf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
 
 ledger = pd.read_excel(ledgerFile, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
 live = ledger[ledger['Status']=='Y']
+
+livedf = live[['Name','Ticker Name']]
+livedf.dropna(inplace=True, subset=['Ticker Name'])
+nameslist = livedf['Name'].unique()
+print(nameslist)
+livedict = dict((i, livedf[livedf['Name']==i]['Ticker Name'].unique().tolist()) for i in nameslist)
+#livedict = livedf.to_dict("list")
+print(livedict)
+names = list(livedict.keys())
+
 industrydf = live.groupby('Industry').size().reset_index()
 industrydf.columns = ['Industry', 'Count']
 leaderboard = inddf[inddf['Date']== str(date)].sort_values(by=['Total', 'Name'], ascending=False)
@@ -279,12 +291,39 @@ def tab4():
                     'backgroundColor': 'rgb(0, 49, 82)',
                     'fontWeight': 'bold',
                     'border': '1px solid black'
-                })
-        ],style={"width": "50%", 'margin-left':10})
-                    
+                }), 
+            html.Br(),
+            html.Br(),
+            html.Div([dcc.Dropdown(id='stockDropDown', multi=False, value='')],style = {"width": "70%"}),
+            html.Br()
+        ], style={"width": "50%", 'margin-left':10}),
+        dcc.Graph(id='stockChart')        
         ])
     return layout
     
+
+
+@app.callback(
+    Output('stockDropDown', 'options'),
+    Input('indDropDown', 'value')
+)
+def update_date_dropdown(name):
+    return [{'label': i, 'value': i} for i in livedict[name]]
+
+
+@app.callback(Output('stockChart', 'figure'),
+                Input('stockDropDown', 'value'))  
+def display_value(value):
+    dff = historydf[historydf['Ticker']==value]
+    fig = px.line(dff, x='Date', y='Price', color='Time', title='', template='plotly_dark').update_layout(
+                                   {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+                                    'paper_bgcolor': 'rgba(0, 0, 0, 0)'
+                                    }).update_layout(
+                                    font_color="white",
+                                    title_font_color="orange",
+                                    legend_title_font_color="white"
+                                )
+    return fig
 
 
 @app.callback(Output('compDropDown', 'value'),
