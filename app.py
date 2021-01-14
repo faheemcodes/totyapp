@@ -258,7 +258,7 @@ def tab3():
 def tab4():
     layout = html.Div([
         html.Br(),
-        html.Div([
+        html.Label(["Select the name",
             dcc.Dropdown(
                             id='indDropDown', 
                             multi=False, 
@@ -294,7 +294,7 @@ def tab4():
                 }), 
             html.Br(),
             html.Br(),
-            html.Div([dcc.Dropdown(id='stockDropDown', multi=False, value='')],style = {"width": "70%"}),
+            html.Label(["Select the stock", dcc.Dropdown(id='stockDropDown', multi=False, value='')],style = {"width": "30%"}),
             html.Br()
         ], style={"width": "50%", 'margin-left':10}),
         dcc.Graph(id='stockChart')        
