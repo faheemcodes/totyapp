@@ -301,12 +301,17 @@ def tab4():
     
 
 
-@app.callback(
-    Output('stockDropDown', 'options'),
-    Input('indDropDown', 'value')
+@app.callback([Output('stockDropDown', 'options'),
+                Output('stockDropDown', 'value')],
+                Input('indDropDown', 'value')
 )
 def update_date_dropdown(name):
-    return [{'label': i, 'value': i} for i in livedict[name]]
+    if name == '':
+        val = ''
+    else:
+        val = historydf[historydf['Name']==name]['Ticker'].unique()[0]
+        
+    return [{'label': i, 'value': i} for i in livedict[name]], val
 
 
 @app.callback(Output('stockChart', 'figure'),
@@ -322,6 +327,7 @@ def display_value(value1, value2):
                                     title_font_color="orange",
                                     legend_title_font_color="white"
                                 )
+
     return fig
 
 
