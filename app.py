@@ -24,7 +24,7 @@ ledgerFile = 'assets/ledgerBackup/ledger.xlsx'
 today = date.today()
 start_date = date(2021,1,4)
 
-totdf = pd.read_csv('assets/TotalPortfolio_' + str(today) + '.csv')
+totdf = pd.read_csv('assets/TotalPortfolio.csv')
 cppdf = pd.read_csv('assets/totalFund.csv')
 sp500 = pd.read_csv('assets/sp500.csv')
 historydf = pd.read_csv('assets/stockhistory.csv')
@@ -93,7 +93,7 @@ elif spGrowth == 0:
 else:
     spGrowthColor = 'danger'
 
-inddf = pd.read_csv('assets/IndividualPortfolio_' + str(today) + '.csv')
+inddf = pd.read_csv('assets/IndividualPortfolio.csv')
 date = inddf['Date'].unique().max()
 inddf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
 
@@ -199,7 +199,7 @@ def tab1():
                             dbc.ListGroupItem('3 - ' + str(leaderdf.iloc[2]['Name']) + ' : ' + str(round(leaderdf.iloc[2]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 80, 130, 100)'}),
                             dbc.ListGroupItem('4 - ' + str(leaderdf.iloc[1]['Name']) + ' : ' + str(round(leaderdf.iloc[1]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 90, 140, 100)'}),
                             dbc.ListGroupItem('5 - ' + str(leaderdf.iloc[0]['Name']) + ' : ' + str(round(leaderdf.iloc[0]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 100, 150, 100)'}),
-                            dbc.ListGroupItem("* as of " +  str(today), style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
+                            dbc.ListGroupItem("* as of " +  str(date) + ' (opening prices)', style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
                             ]),
                         ], style = {'margin-left':30, 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black'})
                 ], style = {'padding-top': '4rem', 'margin-left': 30, 'width': 450}),

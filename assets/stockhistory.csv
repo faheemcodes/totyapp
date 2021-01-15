@@ -410,6 +410,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Alex Tait,69.81999969482422,PriceAfterInvestment,XRT
 2021-01-13,Alex Tait,71.5,PriceAfterInvestment,XRT
 2021-01-14,Alex Tait,71.83000183105469,PriceAfterInvestment,XRT
+2021-01-15,Alex Tait,73.05000305175781,PriceAfterInvestment,XRT
 2019-06-03,Matthew Hawkins,52.38244252511284,PriceBeforeInvestment,XLE
 2019-06-04,Matthew Hawkins,53.18806610281334,PriceBeforeInvestment,XLE
 2019-06-05,Matthew Hawkins,53.71036821923545,PriceBeforeInvestment,XLE
@@ -821,6 +822,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Matthew Hawkins,42.58000183105469,PriceAfterInvestment,XLE
 2021-01-13,Matthew Hawkins,43.689998626708984,PriceAfterInvestment,XLE
 2021-01-14,Matthew Hawkins,43.470001220703125,PriceAfterInvestment,XLE
+2021-01-15,Matthew Hawkins,43.689998626708984,PriceAfterInvestment,XLE
 2019-06-03,Swapnil Sarode,39.939998626708984,PriceBeforeInvestment,UVXY
 2019-06-04,Swapnil Sarode,38.900001525878906,PriceBeforeInvestment,UVXY
 2019-06-05,Swapnil Sarode,36.83000183105469,PriceBeforeInvestment,UVXY
@@ -1232,6 +1234,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Swapnil Sarode,10.739999771118164,PriceAfterInvestment,UVXY
 2021-01-13,Swapnil Sarode,10.5600004196167,PriceAfterInvestment,UVXY
 2021-01-14,Swapnil Sarode,10.180000305175781,PriceAfterInvestment,UVXY
+2021-01-15,Swapnil Sarode,10.710000038146973,PriceAfterInvestment,UVXY
 2019-06-03,Kyan Nademi,37.10200119018555,PriceBeforeInvestment,TSLA
 2019-06-04,Kyan Nademi,36.220001220703125,PriceBeforeInvestment,TSLA
 2019-06-05,Kyan Nademi,39.736000061035156,PriceBeforeInvestment,TSLA
@@ -2447,6 +2450,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Kyan Nademi,831.0,PriceAfterInvestment,TSLA
 2021-01-13,Kyan Nademi,852.760009765625,PriceAfterInvestment,TSLA
 2021-01-14,Kyan Nademi,843.3900146484375,PriceAfterInvestment,TSLA
+2021-01-15,Kyan Nademi,852.0,PriceAfterInvestment,TSLA
 2021-01-04,Jennifer Sue,719.4600219726562,PriceAfterInvestment,TSLA
 2021-01-05,Jennifer Sue,723.6599731445312,PriceAfterInvestment,TSLA
 2021-01-06,Jennifer Sue,758.489990234375,PriceAfterInvestment,TSLA
@@ -2456,6 +2460,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Jennifer Sue,831.0,PriceAfterInvestment,TSLA
 2021-01-13,Jennifer Sue,852.760009765625,PriceAfterInvestment,TSLA
 2021-01-14,Jennifer Sue,843.3900146484375,PriceAfterInvestment,TSLA
+2021-01-15,Jennifer Sue,852.0,PriceAfterInvestment,TSLA
 2021-01-04,Jinny Pham,719.4600219726562,PriceAfterInvestment,TSLA
 2021-01-05,Jinny Pham,723.6599731445312,PriceAfterInvestment,TSLA
 2021-01-06,Jinny Pham,758.489990234375,PriceAfterInvestment,TSLA
@@ -2465,6 +2470,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Jinny Pham,831.0,PriceAfterInvestment,TSLA
 2021-01-13,Jinny Pham,852.760009765625,PriceAfterInvestment,TSLA
 2021-01-14,Jinny Pham,843.3900146484375,PriceAfterInvestment,TSLA
+2021-01-15,Jinny Pham,852.0,PriceAfterInvestment,TSLA
 2019-06-03,Tyler Blakeley,274.2799987792969,PriceBeforeInvestment,SHOP
 2019-06-04,Tyler Blakeley,268.4700012207031,PriceBeforeInvestment,SHOP
 2019-06-05,Tyler Blakeley,277.2200012207031,PriceBeforeInvestment,SHOP
@@ -3680,6 +3686,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Tyler Blakeley,1188.0,PriceAfterInvestment,SHOP
 2021-01-13,Tyler Blakeley,1192.0,PriceAfterInvestment,SHOP
 2021-01-14,Tyler Blakeley,1228.989990234375,PriceAfterInvestment,SHOP
+2021-01-15,Tyler Blakeley,1190.1600341796875,PriceAfterInvestment,SHOP
 2021-01-04,Nancy Fong,1137.989990234375,PriceAfterInvestment,SHOP
 2021-01-05,Nancy Fong,1094.3699951171875,PriceAfterInvestment,SHOP
 2021-01-06,Nancy Fong,1097.5,PriceAfterInvestment,SHOP
@@ -3689,6 +3696,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Nancy Fong,1188.0,PriceAfterInvestment,SHOP
 2021-01-13,Nancy Fong,1192.0,PriceAfterInvestment,SHOP
 2021-01-14,Nancy Fong,1228.989990234375,PriceAfterInvestment,SHOP
+2021-01-15,Nancy Fong,1190.1600341796875,PriceAfterInvestment,SHOP
 2021-01-04,Sanjeev Venkataraman,1137.989990234375,PriceAfterInvestment,SHOP
 2021-01-05,Sanjeev Venkataraman,1094.3699951171875,PriceAfterInvestment,SHOP
 2021-01-06,Sanjeev Venkataraman,1097.5,PriceAfterInvestment,SHOP
@@ -3698,6 +3706,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sanjeev Venkataraman,1188.0,PriceAfterInvestment,SHOP
 2021-01-13,Sanjeev Venkataraman,1192.0,PriceAfterInvestment,SHOP
 2021-01-14,Sanjeev Venkataraman,1228.989990234375,PriceAfterInvestment,SHOP
+2021-01-15,Sanjeev Venkataraman,1190.1600341796875,PriceAfterInvestment,SHOP
 2019-06-03,Elaine Chu,32.010580852942304,PriceBeforeInvestment,SCCO
 2019-06-04,Elaine Chu,33.02004233840521,PriceBeforeInvestment,SCCO
 2019-06-05,Elaine Chu,33.689874335426715,PriceBeforeInvestment,SCCO
@@ -4109,6 +4118,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Elaine Chu,71.0,PriceAfterInvestment,SCCO
 2021-01-13,Elaine Chu,71.79000091552734,PriceAfterInvestment,SCCO
 2021-01-14,Elaine Chu,70.23999786376953,PriceAfterInvestment,SCCO
+2021-01-15,Elaine Chu,69.66000366210938,PriceAfterInvestment,SCCO
 2019-06-03,Valeriya Yesypenko,90.7699966430664,PriceBeforeInvestment,ROKU
 2019-06-04,Valeriya Yesypenko,91.0,PriceBeforeInvestment,ROKU
 2019-06-05,Valeriya Yesypenko,97.30000305175781,PriceBeforeInvestment,ROKU
@@ -4520,6 +4530,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Valeriya Yesypenko,407.8999938964844,PriceAfterInvestment,ROKU
 2021-01-13,Valeriya Yesypenko,419.29998779296875,PriceAfterInvestment,ROKU
 2021-01-14,Valeriya Yesypenko,410.80999755859375,PriceAfterInvestment,ROKU
+2021-01-15,Valeriya Yesypenko,418.0,PriceAfterInvestment,ROKU
 2019-06-03,Danny Chiu,3.1700000762939453,PriceBeforeInvestment,RIOT
 2019-06-04,Danny Chiu,3.0899999141693115,PriceBeforeInvestment,RIOT
 2019-06-05,Danny Chiu,3.190000057220459,PriceBeforeInvestment,RIOT
@@ -4931,6 +4942,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Danny Chiu,23.280000686645508,PriceAfterInvestment,RIOT
 2021-01-13,Danny Chiu,23.649999618530273,PriceAfterInvestment,RIOT
 2021-01-14,Danny Chiu,25.899999618530273,PriceAfterInvestment,RIOT
+2021-01-15,Danny Chiu,27.0,PriceAfterInvestment,RIOT
 2019-06-03,Harrison Pencer,84.97000122070312,PriceBeforeInvestment,RH
 2019-06-04,Harrison Pencer,89.37999725341797,PriceBeforeInvestment,RH
 2019-06-05,Harrison Pencer,92.8499984741211,PriceBeforeInvestment,RH
@@ -5342,6 +5354,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Harrison Pencer,490.8500061035156,PriceAfterInvestment,RH
 2021-01-13,Harrison Pencer,508.3599853515625,PriceAfterInvestment,RH
 2021-01-14,Harrison Pencer,506.2699890136719,PriceAfterInvestment,RH
+2021-01-15,Harrison Pencer,511.45001220703125,PriceAfterInvestment,RH
 2019-06-03,Karan Singh,118.45172069808497,PriceBeforeInvestment,RCL
 2019-06-04,Karan Singh,119.12608032529964,PriceBeforeInvestment,RCL
 2019-06-05,Karan Singh,119.67337755981401,PriceBeforeInvestment,RCL
@@ -5753,6 +5766,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Karan Singh,72.13999938964844,PriceAfterInvestment,RCL
 2021-01-13,Karan Singh,71.77999877929688,PriceAfterInvestment,RCL
 2021-01-14,Karan Singh,73.58999633789062,PriceAfterInvestment,RCL
+2021-01-15,Karan Singh,75.04000091552734,PriceAfterInvestment,RCL
 2019-06-03,Michelle Totten,2.690000057220459,PriceBeforeInvestment,NLS
 2019-06-04,Michelle Totten,2.6500000953674316,PriceBeforeInvestment,NLS
 2019-06-05,Michelle Totten,2.7699999809265137,PriceBeforeInvestment,NLS
@@ -6164,6 +6178,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Michelle Totten,19.770000457763672,PriceAfterInvestment,NLS
 2021-01-13,Michelle Totten,21.020000457763672,PriceAfterInvestment,NLS
 2021-01-14,Michelle Totten,21.610000610351562,PriceAfterInvestment,NLS
+2021-01-15,Michelle Totten,21.0,PriceAfterInvestment,NLS
 2019-06-03,Faheem KulangaraKandiyil,9.789999961853027,PriceBeforeInvestment,MAT
 2019-06-04,Faheem KulangaraKandiyil,9.829999923706055,PriceBeforeInvestment,MAT
 2019-06-05,Faheem KulangaraKandiyil,10.84000015258789,PriceBeforeInvestment,MAT
@@ -6575,6 +6590,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Faheem KulangaraKandiyil,18.450000762939453,PriceAfterInvestment,MAT
 2021-01-13,Faheem KulangaraKandiyil,19.049999237060547,PriceAfterInvestment,MAT
 2021-01-14,Faheem KulangaraKandiyil,19.09000015258789,PriceAfterInvestment,MAT
+2021-01-15,Faheem KulangaraKandiyil,18.559999465942383,PriceAfterInvestment,MAT
 2019-06-03,Mukund Choudhary,38.72403778194541,PriceBeforeInvestment,LABU
 2019-06-04,Mukund Choudhary,41.28100578712034,PriceBeforeInvestment,LABU
 2019-06-05,Mukund Choudhary,43.298607045293124,PriceBeforeInvestment,LABU
@@ -6986,6 +7002,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Mukund Choudhary,117.41000366210938,PriceAfterInvestment,LABU
 2021-01-13,Mukund Choudhary,119.2699966430664,PriceAfterInvestment,LABU
 2021-01-14,Mukund Choudhary,118.5999984741211,PriceAfterInvestment,LABU
+2021-01-15,Mukund Choudhary,127.2300033569336,PriceAfterInvestment,LABU
 2019-06-03,Sonia Solomon,175.33158121551614,PriceBeforeInvestment,GS
 2019-06-04,Sonia Solomon,179.65456883813087,PriceBeforeInvestment,GS
 2019-06-05,Sonia Solomon,183.437179761727,PriceBeforeInvestment,GS
@@ -7397,6 +7414,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sonia Solomon,297.1400146484375,PriceAfterInvestment,GS
 2021-01-13,Sonia Solomon,300.0799865722656,PriceAfterInvestment,GS
 2021-01-14,Sonia Solomon,304.04998779296875,PriceAfterInvestment,GS
+2021-01-15,Sonia Solomon,301.19000244140625,PriceAfterInvestment,GS
 2019-06-03,Manimaran Chelladurai,33.400001525878906,PriceBeforeInvestment,GOOS
 2019-06-04,Manimaran Chelladurai,34.470001220703125,PriceBeforeInvestment,GOOS
 2019-06-05,Manimaran Chelladurai,34.91999816894531,PriceBeforeInvestment,GOOS
@@ -7808,6 +7826,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Manimaran Chelladurai,32.099998474121094,PriceAfterInvestment,GOOS
 2021-01-13,Manimaran Chelladurai,32.279998779296875,PriceAfterInvestment,GOOS
 2021-01-14,Manimaran Chelladurai,32.31999969482422,PriceAfterInvestment,GOOS
+2021-01-15,Manimaran Chelladurai,33.650001525878906,PriceAfterInvestment,GOOS
 2019-06-03,Melanie Laufer,1065.5,PriceBeforeInvestment,GOOG
 2019-06-04,Melanie Laufer,1042.9000244140625,PriceBeforeInvestment,GOOG
 2019-06-05,Melanie Laufer,1051.5400390625,PriceBeforeInvestment,GOOG
@@ -8219,6 +8238,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Melanie Laufer,1753.9200439453125,PriceAfterInvestment,GOOG
 2021-01-13,Melanie Laufer,1738.5799560546875,PriceAfterInvestment,GOOG
 2021-01-14,Melanie Laufer,1753.6199951171875,PriceAfterInvestment,GOOG
+2021-01-15,Melanie Laufer,1738.18994140625,PriceAfterInvestment,GOOG
 2020-09-23,Harshini Deegala,15.119999885559082,PriceBeforeInvestment,CRSR
 2020-09-24,Harshini Deegala,14.180000305175781,PriceBeforeInvestment,CRSR
 2020-09-25,Harshini Deegala,15.829999923706055,PriceBeforeInvestment,CRSR
@@ -8299,6 +8319,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Harshini Deegala,40.25,PriceAfterInvestment,CRSR
 2021-01-13,Harshini Deegala,42.060001373291016,PriceAfterInvestment,CRSR
 2021-01-14,Harshini Deegala,42.37799835205078,PriceAfterInvestment,CRSR
+2021-01-15,Harshini Deegala,39.619998931884766,PriceAfterInvestment,CRSR
 2019-06-03,Spencer Lee,50.46709034789796,PriceBeforeInvestment,CLIX
 2019-06-04,Spencer Lee,49.57893449271226,PriceBeforeInvestment,CLIX
 2019-06-05,Spencer Lee,50.29932707035826,PriceBeforeInvestment,CLIX
@@ -8710,6 +8731,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Spencer Lee,90.30999755859375,PriceAfterInvestment,CLIX
 2021-01-13,Spencer Lee,93.63999938964844,PriceAfterInvestment,CLIX
 2021-01-14,Spencer Lee,94.0,PriceAfterInvestment,CLIX
+2021-01-15,Spencer Lee,95.58000183105469,PriceAfterInvestment,CLIX
 2019-06-03,Xingliang Huang,109.76000213623047,PriceBeforeInvestment,BIDU
 2019-06-04,Xingliang Huang,108.45999908447266,PriceBeforeInvestment,BIDU
 2019-06-05,Xingliang Huang,111.62999725341797,PriceBeforeInvestment,BIDU
@@ -9121,6 +9143,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Xingliang Huang,227.0,PriceAfterInvestment,BIDU
 2021-01-13,Xingliang Huang,242.00999450683594,PriceAfterInvestment,BIDU
 2021-01-14,Xingliang Huang,240.10000610351562,PriceAfterInvestment,BIDU
+2021-01-15,Xingliang Huang,245.27000427246094,PriceAfterInvestment,BIDU
 2019-06-03,Shuang Zhao,149.60000610351562,PriceBeforeInvestment,BABA
 2019-06-04,Shuang Zhao,151.55999755859375,PriceBeforeInvestment,BABA
 2019-06-05,Shuang Zhao,155.1699981689453,PriceBeforeInvestment,BABA
@@ -9532,6 +9555,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Shuang Zhao,228.38499450683594,PriceAfterInvestment,BABA
 2021-01-13,Shuang Zhao,229.94000244140625,PriceAfterInvestment,BABA
 2021-01-14,Shuang Zhao,245.30999755859375,PriceAfterInvestment,BABA
+2021-01-15,Shuang Zhao,246.25,PriceAfterInvestment,BABA
 2019-06-03,Philip Bermingham,39.94071127631207,PriceBeforeInvestment,ARKK
 2019-06-04,Philip Bermingham,40.04857557463887,PriceBeforeInvestment,ARKK
 2019-06-05,Philip Bermingham,41.50970227344566,PriceBeforeInvestment,ARKK
@@ -9943,6 +9967,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Philip Bermingham,140.17999267578125,PriceAfterInvestment,ARKK
 2021-01-13,Philip Bermingham,141.92999267578125,PriceAfterInvestment,ARKK
 2021-01-14,Philip Bermingham,143.36199951171875,PriceAfterInvestment,ARKK
+2021-01-15,Philip Bermingham,146.8699951171875,PriceAfterInvestment,ARKK
 2019-12-27,Tony Quatrale,34.92635265889468,PriceBeforeInvestment,ARKG
 2019-12-30,Tony Quatrale,34.132572957715745,PriceBeforeInvestment,ARKG
 2019-12-31,Tony Quatrale,33.03120315598589,PriceBeforeInvestment,ARKG
@@ -10209,6 +10234,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Tony Quatrale,105.2699966430664,PriceAfterInvestment,ARKG
 2021-01-13,Tony Quatrale,105.0,PriceAfterInvestment,ARKG
 2021-01-14,Tony Quatrale,106.51000213623047,PriceAfterInvestment,ARKG
+2021-01-15,Tony Quatrale,110.75,PriceAfterInvestment,ARKG
 2019-06-03,Sam Akhtar,11.187412549587389,PriceBeforeInvestment,AMC
 2019-06-04,Sam Akhtar,11.253000912710009,PriceBeforeInvestment,AMC
 2019-06-05,Sam Akhtar,11.103085489489658,PriceBeforeInvestment,AMC
@@ -10620,6 +10646,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sam Akhtar,2.240000009536743,PriceAfterInvestment,AMC
 2021-01-13,Sam Akhtar,2.3299999237060547,PriceAfterInvestment,AMC
 2021-01-14,Sam Akhtar,2.2200000286102295,PriceAfterInvestment,AMC
+2021-01-15,Sam Akhtar,2.200000047683716,PriceAfterInvestment,AMC
 2020-12-10,Alisia Lalji,146.0,PriceBeforeInvestment,ABNB
 2020-12-11,Alisia Lalji,146.5500030517578,PriceBeforeInvestment,ABNB
 2020-12-14,Alisia Lalji,135.0,PriceBeforeInvestment,ABNB
@@ -10645,6 +10672,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Alisia Lalji,148.0800018310547,PriceAfterInvestment,ABNB
 2021-01-13,Alisia Lalji,160.80999755859375,PriceAfterInvestment,ABNB
 2021-01-14,Alisia Lalji,175.5399932861328,PriceAfterInvestment,ABNB
+2021-01-15,Alisia Lalji,184.5800018310547,PriceAfterInvestment,ABNB
 2020-12-11,Julien Guichandut,61.0,PriceBeforeInvestment,ABCL
 2020-12-14,Julien Guichandut,56.92599868774414,PriceBeforeInvestment,ABCL
 2020-12-15,Julien Guichandut,50.810001373291016,PriceBeforeInvestment,ABCL
@@ -10669,6 +10697,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Julien Guichandut,37.0,PriceAfterInvestment,ABCL
 2021-01-13,Julien Guichandut,39.900001525878906,PriceAfterInvestment,ABCL
 2021-01-14,Julien Guichandut,44.38999938964844,PriceAfterInvestment,ABCL
+2021-01-15,Julien Guichandut,45.5099983215332,PriceAfterInvestment,ABCL
 2019-06-03,Kerry Edwards,43.229595663699676,PriceBeforeInvestment,AAPL
 2019-06-04,Kerry Edwards,43.19020991162728,PriceBeforeInvestment,AAPL
 2019-06-05,Kerry Edwards,45.36645730468386,PriceBeforeInvestment,AAPL
@@ -11080,6 +11109,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Kerry Edwards,128.5,PriceAfterInvestment,AAPL
 2021-01-13,Kerry Edwards,128.75999450683594,PriceAfterInvestment,AAPL
 2021-01-14,Kerry Edwards,130.8000030517578,PriceAfterInvestment,AAPL
+2021-01-15,Kerry Edwards,128.77999877929688,PriceAfterInvestment,AAPL
 2019-06-03,Lindsay Black,26.838442706246393,PriceBeforeInvestment,AAL
 2019-06-04,Lindsay Black,27.34314589574031,PriceBeforeInvestment,AAL
 2019-06-05,Lindsay Black,29.451034300948994,PriceBeforeInvestment,AAL
@@ -11491,6 +11521,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Lindsay Black,15.079999923706055,PriceAfterInvestment,AAL
 2021-01-13,Lindsay Black,15.289999961853027,PriceAfterInvestment,AAL
 2021-01-14,Lindsay Black,15.829999923706055,PriceAfterInvestment,AAL
+2021-01-15,Lindsay Black,16.170000076293945,PriceAfterInvestment,AAL
 2019-06-03,Alex Tait,,SMA20,XRT
 2019-06-04,Alex Tait,,SMA20,XRT
 2019-06-05,Alex Tait,,SMA20,XRT
@@ -11902,6 +11933,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Alex Tait,64.80249731759974,SMA20,XRT
 2021-01-13,Alex Tait,65.34157380133927,SMA20,XRT
 2021-01-14,Alex Tait,65.83190983343943,SMA20,XRT
+2021-01-15,Alex Tait,66.35884306566349,SMA20,XRT
 2019-06-03,Matthew Hawkins,,SMA20,XLE
 2019-06-04,Matthew Hawkins,,SMA20,XLE
 2019-06-05,Matthew Hawkins,,SMA20,XLE
@@ -12313,6 +12345,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Matthew Hawkins,39.22421023996075,SMA20,XLE
 2021-01-13,Matthew Hawkins,39.44004000170902,SMA20,XLE
 2021-01-14,Matthew Hawkins,39.612305424352044,SMA20,XLE
+2021-01-15,Matthew Hawkins,39.79261049925283,SMA20,XLE
 2019-06-03,Swapnil Sarode,,SMA20,UVXY
 2019-06-04,Swapnil Sarode,,SMA20,UVXY
 2019-06-05,Swapnil Sarode,,SMA20,UVXY
@@ -12724,6 +12757,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Swapnil Sarode,11.13550000190735,SMA20,UVXY
 2021-01-13,Swapnil Sarode,11.06850004196167,SMA20,UVXY
 2021-01-14,Swapnil Sarode,11.005000066757201,SMA20,UVXY
+2021-01-15,Swapnil Sarode,10.993000078201295,SMA20,UVXY
 2019-06-03,Kyan Nademi,,SMA20,TSLA
 2019-06-04,Kyan Nademi,,SMA20,TSLA
 2019-06-05,Kyan Nademi,,SMA20,TSLA
@@ -13135,6 +13169,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Kyan Nademi,705.0315032958985,SMA20,TSLA
 2021-01-13,Kyan Nademi,715.505502319336,SMA20,TSLA
 2021-01-14,Kyan Nademi,726.2635040283203,SMA20,TSLA
+2021-01-15,Kyan Nademi,737.45400390625,SMA20,TSLA
 2019-06-03,Jennifer Sue,,SMA20,TSLA
 2019-06-04,Jennifer Sue,,SMA20,TSLA
 2019-06-05,Jennifer Sue,,SMA20,TSLA
@@ -13546,6 +13581,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Jennifer Sue,705.0315032958985,SMA20,TSLA
 2021-01-13,Jennifer Sue,715.505502319336,SMA20,TSLA
 2021-01-14,Jennifer Sue,726.2635040283203,SMA20,TSLA
+2021-01-15,Jennifer Sue,737.45400390625,SMA20,TSLA
 2019-06-03,Jinny Pham,,SMA20,TSLA
 2019-06-04,Jinny Pham,,SMA20,TSLA
 2019-06-05,Jinny Pham,,SMA20,TSLA
@@ -13957,6 +13993,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Jinny Pham,705.0315032958985,SMA20,TSLA
 2021-01-13,Jinny Pham,715.505502319336,SMA20,TSLA
 2021-01-14,Jinny Pham,726.2635040283203,SMA20,TSLA
+2021-01-15,Jinny Pham,737.45400390625,SMA20,TSLA
 2019-06-03,Tyler Blakeley,,SMA20,SHOP
 2019-06-04,Tyler Blakeley,,SMA20,SHOP
 2019-06-05,Tyler Blakeley,,SMA20,SHOP
@@ -14368,6 +14405,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Tyler Blakeley,1158.5684875488282,SMA20,SHOP
 2021-01-13,Tyler Blakeley,1165.4589904785157,SMA20,SHOP
 2021-01-14,Tyler Blakeley,1173.2779907226563,SMA20,SHOP
+2021-01-15,Tyler Blakeley,1174.6359924316407,SMA20,SHOP
 2019-06-03,Nancy Fong,,SMA20,SHOP
 2019-06-04,Nancy Fong,,SMA20,SHOP
 2019-06-05,Nancy Fong,,SMA20,SHOP
@@ -14779,6 +14817,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Nancy Fong,1158.5684875488282,SMA20,SHOP
 2021-01-13,Nancy Fong,1165.4589904785157,SMA20,SHOP
 2021-01-14,Nancy Fong,1173.2779907226563,SMA20,SHOP
+2021-01-15,Nancy Fong,1174.6359924316407,SMA20,SHOP
 2019-06-03,Sanjeev Venkataraman,,SMA20,SHOP
 2019-06-04,Sanjeev Venkataraman,,SMA20,SHOP
 2019-06-05,Sanjeev Venkataraman,,SMA20,SHOP
@@ -15190,6 +15229,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sanjeev Venkataraman,1158.5684875488282,SMA20,SHOP
 2021-01-13,Sanjeev Venkataraman,1165.4589904785157,SMA20,SHOP
 2021-01-14,Sanjeev Venkataraman,1173.2779907226563,SMA20,SHOP
+2021-01-15,Sanjeev Venkataraman,1174.6359924316407,SMA20,SHOP
 2019-06-03,Elaine Chu,,SMA20,SCCO
 2019-06-04,Elaine Chu,,SMA20,SCCO
 2019-06-05,Elaine Chu,,SMA20,SCCO
@@ -15601,6 +15641,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Elaine Chu,65.53149909973145,SMA20,SCCO
 2021-01-13,Elaine Chu,66.096999168396,SMA20,SCCO
 2021-01-14,Elaine Chu,66.55849914550781,SMA20,SCCO
+2021-01-15,Elaine Chu,66.91349925994874,SMA20,SCCO
 2019-06-03,Valeriya Yesypenko,,SMA20,ROKU
 2019-06-04,Valeriya Yesypenko,,SMA20,ROKU
 2019-06-05,Valeriya Yesypenko,,SMA20,ROKU
@@ -16012,6 +16053,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Valeriya Yesypenko,349.2114501953125,SMA20,ROKU
 2021-01-13,Valeriya Yesypenko,353.9059494018555,SMA20,ROKU
 2021-01-14,Valeriya Yesypenko,358.3864486694336,SMA20,ROKU
+2021-01-15,Valeriya Yesypenko,361.9539489746094,SMA20,ROKU
 2019-06-03,Danny Chiu,,SMA20,RIOT
 2019-06-04,Danny Chiu,,SMA20,RIOT
 2019-06-05,Danny Chiu,,SMA20,RIOT
@@ -16423,6 +16465,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Danny Chiu,16.024249935150145,SMA20,RIOT
 2021-01-13,Danny Chiu,16.74424991607666,SMA20,RIOT
 2021-01-14,Danny Chiu,17.476749897003174,SMA20,RIOT
+2021-01-15,Danny Chiu,18.24449987411499,SMA20,RIOT
 2019-06-03,Harrison Pencer,,SMA20,RH
 2019-06-04,Harrison Pencer,,SMA20,RH
 2019-06-05,Harrison Pencer,,SMA20,RH
@@ -16834,6 +16877,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Harrison Pencer,457.8310012817383,SMA20,RH
 2021-01-13,Harrison Pencer,461.6529998779297,SMA20,RH
 2021-01-14,Harrison Pencer,464.9934997558594,SMA20,RH
+2021-01-15,Harrison Pencer,468.38450012207034,SMA20,RH
 2019-06-03,Karan Singh,,SMA20,RCL
 2019-06-04,Karan Singh,,SMA20,RCL
 2019-06-05,Karan Singh,,SMA20,RCL
@@ -17245,6 +17289,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Karan Singh,72.70250015258789,SMA20,RCL
 2021-01-13,Karan Singh,72.55900001525879,SMA20,RCL
 2021-01-14,Karan Singh,72.53549995422364,SMA20,RCL
+2021-01-15,Karan Singh,72.58650016784668,SMA20,RCL
 2019-06-03,Michelle Totten,,SMA20,NLS
 2019-06-04,Michelle Totten,,SMA20,NLS
 2019-06-05,Michelle Totten,,SMA20,NLS
@@ -17656,6 +17701,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Michelle Totten,19.387000179290773,SMA20,NLS
 2021-01-13,Michelle Totten,19.56200017929077,SMA20,NLS
 2021-01-14,Michelle Totten,19.741500186920167,SMA20,NLS
+2021-01-15,Michelle Totten,19.88000020980835,SMA20,NLS
 2019-06-03,Faheem KulangaraKandiyil,,SMA20,MAT
 2019-06-04,Faheem KulangaraKandiyil,,SMA20,MAT
 2019-06-05,Faheem KulangaraKandiyil,,SMA20,MAT
@@ -18067,6 +18113,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Faheem KulangaraKandiyil,17.66049995422363,SMA20,MAT
 2021-01-13,Faheem KulangaraKandiyil,17.798499870300294,SMA20,MAT
 2021-01-14,Faheem KulangaraKandiyil,17.889999866485596,SMA20,MAT
+2021-01-15,Faheem KulangaraKandiyil,17.923499870300294,SMA20,MAT
 2019-06-03,Mukund Choudhary,,SMA20,LABU
 2019-06-04,Mukund Choudhary,,SMA20,LABU
 2019-06-05,Mukund Choudhary,,SMA20,LABU
@@ -18478,6 +18525,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Mukund Choudhary,113.17799949645996,SMA20,LABU
 2021-01-13,Mukund Choudhary,113.24099922180176,SMA20,LABU
 2021-01-14,Mukund Choudhary,113.46699905395508,SMA20,LABU
+2021-01-15,Mukund Choudhary,114.30949935913085,SMA20,LABU
 2019-06-03,Sonia Solomon,,SMA20,GS
 2019-06-04,Sonia Solomon,,SMA20,GS
 2019-06-05,Sonia Solomon,,SMA20,GS
@@ -18889,6 +18937,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sonia Solomon,263.13499908447267,SMA20,GS
 2021-01-13,Sonia Solomon,266.16399841308595,SMA20,GS
 2021-01-14,Sonia Solomon,269.18849792480466,SMA20,GS
+2021-01-15,Sonia Solomon,271.997998046875,SMA20,GS
 2019-06-03,Manimaran Chelladurai,,SMA20,GOOS
 2019-06-04,Manimaran Chelladurai,,SMA20,GOOS
 2019-06-05,Manimaran Chelladurai,,SMA20,GOOS
@@ -19300,6 +19349,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Manimaran Chelladurai,30.555499935150145,SMA20,GOOS
 2021-01-13,Manimaran Chelladurai,30.64999990463257,SMA20,GOOS
 2021-01-14,Manimaran Chelladurai,30.669999885559083,SMA20,GOOS
+2021-01-15,Manimaran Chelladurai,30.76949996948242,SMA20,GOOS
 2019-06-03,Melanie Laufer,,SMA20,GOOG
 2019-06-04,Melanie Laufer,,SMA20,GOOG
 2019-06-05,Melanie Laufer,,SMA20,GOOG
@@ -19711,6 +19761,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Melanie Laufer,1750.9317687988282,SMA20,GOOG
 2021-01-13,Melanie Laufer,1749.6397644042968,SMA20,GOOG
 2021-01-14,Melanie Laufer,1748.6767639160157,SMA20,GOOG
+2021-01-15,Melanie Laufer,1747.1607604980468,SMA20,GOOG
 2020-09-23,Harshini Deegala,,SMA20,CRSR
 2020-09-24,Harshini Deegala,,SMA20,CRSR
 2020-09-25,Harshini Deegala,,SMA20,CRSR
@@ -19791,6 +19842,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Harshini Deegala,38.03470039367676,SMA20,CRSR
 2021-01-13,Harshini Deegala,38.30070037841797,SMA20,CRSR
 2021-01-14,Harshini Deegala,38.65565032958985,SMA20,CRSR
+2021-01-15,Harshini Deegala,38.75465030670166,SMA20,CRSR
 2019-06-03,Spencer Lee,,SMA20,CLIX
 2019-06-04,Spencer Lee,,SMA20,CLIX
 2019-06-05,Spencer Lee,,SMA20,CLIX
@@ -20202,6 +20254,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Spencer Lee,93.3734817744355,SMA20,CLIX
 2021-01-13,Spencer Lee,93.50430523024924,SMA20,CLIX
 2021-01-14,Spencer Lee,93.64122630687726,SMA20,CLIX
+2021-01-15,Spencer Lee,93.6840668121106,SMA20,CLIX
 2019-06-03,Xingliang Huang,,SMA20,BIDU
 2019-06-04,Xingliang Huang,,SMA20,BIDU
 2019-06-05,Xingliang Huang,,SMA20,BIDU
@@ -20613,6 +20666,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Xingliang Huang,204.18349990844726,SMA20,BIDU
 2021-01-13,Xingliang Huang,207.79649963378907,SMA20,BIDU
 2021-01-14,Xingliang Huang,210.33450012207032,SMA20,BIDU
+2021-01-15,Xingliang Huang,213.34100036621095,SMA20,BIDU
 2019-06-03,Shuang Zhao,,SMA20,BABA
 2019-06-04,Shuang Zhao,,SMA20,BABA
 2019-06-05,Shuang Zhao,,SMA20,BABA
@@ -21024,6 +21078,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Shuang Zhao,240.0188995361328,SMA20,BABA
 2021-01-13,Shuang Zhao,238.7488998413086,SMA20,BABA
 2021-01-14,Shuang Zhao,238.12740020751954,SMA20,BABA
+2021-01-15,Shuang Zhao,237.20489959716798,SMA20,BABA
 2019-06-03,Philip Bermingham,,SMA20,ARKK
 2019-06-04,Philip Bermingham,,SMA20,ARKK
 2019-06-05,Philip Bermingham,,SMA20,ARKK
@@ -21435,6 +21490,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Philip Bermingham,129.7159172717953,SMA20,ARKK
 2021-01-13,Philip Bermingham,130.589479380034,SMA20,ARKK
 2021-01-14,Philip Bermingham,131.62076410348814,SMA20,ARKK
+2021-01-15,Philip Bermingham,132.79595226445508,SMA20,ARKK
 2019-12-27,Tony Quatrale,,SMA20,ARKG
 2019-12-30,Tony Quatrale,,SMA20,ARKG
 2019-12-31,Tony Quatrale,,SMA20,ARKG
@@ -21701,6 +21757,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Tony Quatrale,98.62514662536941,SMA20,ARKG
 2021-01-13,Tony Quatrale,99.03556434004675,SMA20,ARKG
 2021-01-14,Tony Quatrale,99.63558821468692,SMA20,ARKG
+2021-01-15,Tony Quatrale,100.49722343709485,SMA20,ARKG
 2019-06-03,Sam Akhtar,,SMA20,AMC
 2019-06-04,Sam Akhtar,,SMA20,AMC
 2019-06-05,Sam Akhtar,,SMA20,AMC
@@ -22112,6 +22169,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sam Akhtar,2.439999985694885,SMA20,AMC
 2021-01-13,Sam Akhtar,2.3944999814033507,SMA20,AMC
 2021-01-14,Sam Akhtar,2.361999988555908,SMA20,AMC
+2021-01-15,Sam Akhtar,2.33199999332428,SMA20,AMC
 2020-12-10,Alisia Lalji,,SMA20,ABNB
 2020-12-11,Alisia Lalji,,SMA20,ABNB
 2020-12-14,Alisia Lalji,,SMA20,ABNB
@@ -22137,6 +22195,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Alisia Lalji,149.0997001647949,SMA20,ABNB
 2021-01-13,Alisia Lalji,150.8056999206543,SMA20,ABNB
 2021-01-14,Alisia Lalji,153.29119949340821,SMA20,ABNB
+2021-01-15,Alisia Lalji,155.37019958496094,SMA20,ABNB
 2020-12-11,Julien Guichandut,,SMA20,ABCL
 2020-12-14,Julien Guichandut,,SMA20,ABCL
 2020-12-15,Julien Guichandut,,SMA20,ABCL
@@ -22161,6 +22220,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Julien Guichandut,42.97500038146973,SMA20,ABCL
 2021-01-13,Julien Guichandut,42.42950038909912,SMA20,ABCL
 2021-01-14,Julien Guichandut,42.29250030517578,SMA20,ABCL
+2021-01-15,Julien Guichandut,42.14100017547607,SMA20,ABCL
 2019-06-03,Kerry Edwards,,SMA20,AAPL
 2019-06-04,Kerry Edwards,,SMA20,AAPL
 2019-06-05,Kerry Edwards,,SMA20,AAPL
@@ -22572,6 +22632,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Kerry Edwards,130.67750129699706,SMA20,AAPL
 2021-01-13,Kerry Edwards,130.89850120544435,SMA20,AAPL
 2021-01-14,Kerry Edwards,131.06800117492676,SMA20,AAPL
+2021-01-15,Kerry Edwards,131.06200141906737,SMA20,AAPL
 2019-06-03,Lindsay Black,,SMA20,AAL
 2019-06-04,Lindsay Black,,SMA20,AAL
 2019-06-05,Lindsay Black,,SMA20,AAL
@@ -22983,6 +23044,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Lindsay Black,15.925500106811523,SMA20,AAL
 2021-01-13,Lindsay Black,15.840500116348267,SMA20,AAL
 2021-01-14,Lindsay Black,15.78800015449524,SMA20,AAL
+2021-01-15,Lindsay Black,15.749000120162965,SMA20,AAL
 2019-06-03,Alex Tait,,SMA50,XRT
 2019-06-04,Alex Tait,,SMA50,XRT
 2019-06-05,Alex Tait,,SMA50,XRT
@@ -23394,6 +23456,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Alex Tait,60.46160128086444,SMA50,XRT
 2021-01-13,Alex Tait,60.88540383346159,SMA50,XRT
 2021-01-14,Alex Tait,61.30086584155105,SMA50,XRT
+2021-01-15,Alex Tait,61.714432404954515,SMA50,XRT
 2019-06-03,Matthew Hawkins,,SMA50,XLE
 2019-06-04,Matthew Hawkins,,SMA50,XLE
 2019-06-05,Matthew Hawkins,,SMA50,XLE
@@ -23805,6 +23868,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Matthew Hawkins,37.06184254271345,SMA50,XLE
 2021-01-13,Matthew Hawkins,37.361126351504176,SMA50,XLE
 2021-01-14,Matthew Hawkins,37.63449793703932,SMA50,XLE
+2021-01-15,Matthew Hawkins,37.924703205899185,SMA50,XLE
 2019-06-03,Swapnil Sarode,,SMA50,UVXY
 2019-06-04,Swapnil Sarode,,SMA50,UVXY
 2019-06-05,Swapnil Sarode,,SMA50,UVXY
@@ -24216,6 +24280,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Swapnil Sarode,12.262399997711181,SMA50,UVXY
 2021-01-13,Swapnil Sarode,12.071000022888184,SMA50,UVXY
 2021-01-14,Swapnil Sarode,11.87520004272461,SMA50,UVXY
+2021-01-15,Swapnil Sarode,11.72940004348755,SMA50,UVXY
 2019-06-03,Kyan Nademi,,SMA50,TSLA
 2019-06-04,Kyan Nademi,,SMA50,TSLA
 2019-06-05,Kyan Nademi,,SMA50,TSLA
@@ -24627,6 +24692,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Kyan Nademi,588.2730029296876,SMA50,TSLA
 2021-01-13,Kyan Nademi,597.448203125,SMA50,TSLA
 2021-01-14,Kyan Nademi,606.1214031982422,SMA50,TSLA
+2021-01-15,Kyan Nademi,614.5490032958984,SMA50,TSLA
 2019-06-03,Jennifer Sue,,SMA50,TSLA
 2019-06-04,Jennifer Sue,,SMA50,TSLA
 2019-06-05,Jennifer Sue,,SMA50,TSLA
@@ -25038,6 +25104,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Jennifer Sue,588.2730029296876,SMA50,TSLA
 2021-01-13,Jennifer Sue,597.448203125,SMA50,TSLA
 2021-01-14,Jennifer Sue,606.1214031982422,SMA50,TSLA
+2021-01-15,Jennifer Sue,614.5490032958984,SMA50,TSLA
 2019-06-03,Jinny Pham,,SMA50,TSLA
 2019-06-04,Jinny Pham,,SMA50,TSLA
 2019-06-05,Jinny Pham,,SMA50,TSLA
@@ -25449,6 +25516,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Jinny Pham,588.2730029296876,SMA50,TSLA
 2021-01-13,Jinny Pham,597.448203125,SMA50,TSLA
 2021-01-14,Jinny Pham,606.1214031982422,SMA50,TSLA
+2021-01-15,Jinny Pham,614.5490032958984,SMA50,TSLA
 2019-06-03,Tyler Blakeley,,SMA50,SHOP
 2019-06-04,Tyler Blakeley,,SMA50,SHOP
 2019-06-05,Tyler Blakeley,,SMA50,SHOP
@@ -25860,6 +25928,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Tyler Blakeley,1061.5715930175782,SMA50,SHOP
 2021-01-13,Tyler Blakeley,1066.7201928710938,SMA50,SHOP
 2021-01-14,Tyler Blakeley,1072.8399926757813,SMA50,SHOP
+2021-01-15,Tyler Blakeley,1077.123193359375,SMA50,SHOP
 2019-06-03,Nancy Fong,,SMA50,SHOP
 2019-06-04,Nancy Fong,,SMA50,SHOP
 2019-06-05,Nancy Fong,,SMA50,SHOP
@@ -26271,6 +26340,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Nancy Fong,1061.5715930175782,SMA50,SHOP
 2021-01-13,Nancy Fong,1066.7201928710938,SMA50,SHOP
 2021-01-14,Nancy Fong,1072.8399926757813,SMA50,SHOP
+2021-01-15,Nancy Fong,1077.123193359375,SMA50,SHOP
 2019-06-03,Sanjeev Venkataraman,,SMA50,SHOP
 2019-06-04,Sanjeev Venkataraman,,SMA50,SHOP
 2019-06-05,Sanjeev Venkataraman,,SMA50,SHOP
@@ -26682,6 +26752,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sanjeev Venkataraman,1061.5715930175782,SMA50,SHOP
 2021-01-13,Sanjeev Venkataraman,1066.7201928710938,SMA50,SHOP
 2021-01-14,Sanjeev Venkataraman,1072.8399926757813,SMA50,SHOP
+2021-01-15,Sanjeev Venkataraman,1077.123193359375,SMA50,SHOP
 2019-06-03,Elaine Chu,,SMA50,SCCO
 2019-06-04,Elaine Chu,,SMA50,SCCO
 2019-06-05,Elaine Chu,,SMA50,SCCO
@@ -27093,6 +27164,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Elaine Chu,60.57415042500364,SMA50,SCCO
 2021-01-13,Elaine Chu,60.962140472945315,SMA50,SCCO
 2021-01-14,Elaine Chu,61.279889655017016,SMA50,SCCO
+2021-01-15,Elaine Chu,61.60209194804636,SMA50,SCCO
 2019-06-03,Valeriya Yesypenko,,SMA50,ROKU
 2019-06-04,Valeriya Yesypenko,,SMA50,ROKU
 2019-06-05,Valeriya Yesypenko,,SMA50,ROKU
@@ -27504,6 +27576,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Valeriya Yesypenko,295.6304406738281,SMA50,ROKU
 2021-01-13,Valeriya Yesypenko,299.90324035644534,SMA50,ROKU
 2021-01-14,Valeriya Yesypenko,303.94844024658204,SMA50,ROKU
+2021-01-15,Valeriya Yesypenko,308.1458401489258,SMA50,ROKU
 2019-06-03,Danny Chiu,,SMA50,RIOT
 2019-06-04,Danny Chiu,,SMA50,RIOT
 2019-06-05,Danny Chiu,,SMA50,RIOT
@@ -27915,6 +27988,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Danny Chiu,10.168759999275208,SMA50,RIOT
 2021-01-13,Danny Chiu,10.576559991836548,SMA50,RIOT
 2021-01-14,Danny Chiu,11.027559986114502,SMA50,RIOT
+2021-01-15,Danny Chiu,11.495759987831116,SMA50,RIOT
 2019-06-03,Harrison Pencer,,SMA50,RH
 2019-06-04,Harrison Pencer,,SMA50,RH
 2019-06-05,Harrison Pencer,,SMA50,RH
@@ -28326,6 +28400,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Harrison Pencer,436.97700134277346,SMA50,RH
 2021-01-13,Harrison Pencer,440.3716009521484,SMA50,RH
 2021-01-14,Harrison Pencer,443.52320068359376,SMA50,RH
+2021-01-15,Harrison Pencer,446.44000122070315,SMA50,RH
 2019-06-03,Karan Singh,,SMA50,RCL
 2019-06-04,Karan Singh,,SMA50,RCL
 2019-06-05,Karan Singh,,SMA50,RCL
@@ -28737,6 +28812,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Karan Singh,73.54099975585937,SMA50,RCL
 2021-01-13,Karan Singh,73.87659973144531,SMA50,RCL
 2021-01-14,Karan Singh,74.21039962768555,SMA50,RCL
+2021-01-15,Karan Singh,74.56699966430664,SMA50,RCL
 2019-06-03,Michelle Totten,,SMA50,NLS
 2019-06-04,Michelle Totten,,SMA50,NLS
 2019-06-05,Michelle Totten,,SMA50,NLS
@@ -29148,6 +29224,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Michelle Totten,19.84260009765625,SMA50,NLS
 2021-01-13,Michelle Totten,19.821400108337404,SMA50,NLS
 2021-01-14,Michelle Totten,19.794600105285646,SMA50,NLS
+2021-01-15,Michelle Totten,19.718600120544433,SMA50,NLS
 2019-06-03,Faheem KulangaraKandiyil,,SMA50,MAT
 2019-06-04,Faheem KulangaraKandiyil,,SMA50,MAT
 2019-06-05,Faheem KulangaraKandiyil,,SMA50,MAT
@@ -29559,6 +29636,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Faheem KulangaraKandiyil,16.00639995574951,SMA50,MAT
 2021-01-13,Faheem KulangaraKandiyil,16.109399948120117,SMA50,MAT
 2021-01-14,Faheem KulangaraKandiyil,16.210799942016603,SMA50,MAT
+2021-01-15,Faheem KulangaraKandiyil,16.305599937438966,SMA50,MAT
 2019-06-03,Mukund Choudhary,,SMA50,LABU
 2019-06-04,Mukund Choudhary,,SMA50,LABU
 2019-06-05,Mukund Choudhary,,SMA50,LABU
@@ -29970,6 +30048,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Mukund Choudhary,92.34647972106933,SMA50,LABU
 2021-01-13,Mukund Choudhary,93.63507965087891,SMA50,LABU
 2021-01-14,Mukund Choudhary,94.91287963867188,SMA50,LABU
+2021-01-15,Mukund Choudhary,96.2082797241211,SMA50,LABU
 2019-06-03,Sonia Solomon,,SMA50,GS
 2019-06-04,Sonia Solomon,,SMA50,GS
 2019-06-05,Sonia Solomon,,SMA50,GS
@@ -30381,6 +30460,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sonia Solomon,239.21035622324302,SMA50,GS
 2021-01-13,Sonia Solomon,241.39277306365798,SMA50,GS
 2021-01-14,Sonia Solomon,243.61600012900087,SMA50,GS
+2021-01-15,Sonia Solomon,245.73607808621426,SMA50,GS
 2019-06-03,Manimaran Chelladurai,,SMA50,GOOS
 2019-06-04,Manimaran Chelladurai,,SMA50,GOOS
 2019-06-05,Manimaran Chelladurai,,SMA50,GOOS
@@ -30792,6 +30872,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Manimaran Chelladurai,32.37560001373291,SMA50,GOOS
 2021-01-13,Manimaran Chelladurai,32.39200000762939,SMA50,GOOS
 2021-01-14,Manimaran Chelladurai,32.40340000152588,SMA50,GOOS
+2021-01-15,Manimaran Chelladurai,32.434200019836425,SMA50,GOOS
 2019-06-03,Melanie Laufer,,SMA50,GOOG
 2019-06-04,Melanie Laufer,,SMA50,GOOG
 2019-06-05,Melanie Laufer,,SMA50,GOOG
@@ -31203,6 +31284,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Melanie Laufer,1757.9149853515626,SMA50,GOOG
 2021-01-13,Melanie Laufer,1760.1233837890625,SMA50,GOOG
 2021-01-14,Melanie Laufer,1762.5601831054687,SMA50,GOOG
+2021-01-15,Melanie Laufer,1763.1183813476562,SMA50,GOOG
 2020-09-23,Harshini Deegala,,SMA50,CRSR
 2020-09-24,Harshini Deegala,,SMA50,CRSR
 2020-09-25,Harshini Deegala,,SMA50,CRSR
@@ -31283,6 +31365,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Harshini Deegala,35.479900131225584,SMA50,CRSR
 2021-01-13,Harshini Deegala,35.84550014495849,SMA50,CRSR
 2021-01-14,Harshini Deegala,36.19886013031006,SMA50,CRSR
+2021-01-15,Harshini Deegala,36.48926010131836,SMA50,CRSR
 2019-06-03,Spencer Lee,,SMA50,CLIX
 2019-06-04,Spencer Lee,,SMA50,CLIX
 2019-06-05,Spencer Lee,,SMA50,CLIX
@@ -31694,6 +31777,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Spencer Lee,88.97224236976933,SMA50,CLIX
 2021-01-13,Spencer Lee,89.15708503889392,SMA50,CLIX
 2021-01-14,Spencer Lee,89.34892934967974,SMA50,CLIX
+2021-01-15,Spencer Lee,89.54936235802394,SMA50,CLIX
 2019-06-03,Xingliang Huang,,SMA50,BIDU
 2019-06-04,Xingliang Huang,,SMA50,BIDU
 2019-06-05,Xingliang Huang,,SMA50,BIDU
@@ -32105,6 +32189,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Xingliang Huang,167.4066000366211,SMA50,BIDU
 2021-01-13,Xingliang Huang,169.56059997558594,SMA50,BIDU
 2021-01-14,Xingliang Huang,171.66940002441407,SMA50,BIDU
+2021-01-15,Xingliang Huang,173.81800018310548,SMA50,BIDU
 2019-06-03,Shuang Zhao,,SMA50,BABA
 2019-06-04,Shuang Zhao,,SMA50,BABA
 2019-06-05,Shuang Zhao,,SMA50,BABA
@@ -32516,6 +32601,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Shuang Zhao,259.3306610107422,SMA50,BABA
 2021-01-13,Shuang Zhao,257.7104608154297,SMA50,BABA
 2021-01-14,Shuang Zhao,256.8926605224609,SMA50,BABA
+2021-01-15,Shuang Zhao,256.0618603515625,SMA50,BABA
 2019-06-03,Philip Bermingham,,SMA50,ARKK
 2019-06-04,Philip Bermingham,,SMA50,ARKK
 2019-06-05,Philip Bermingham,,SMA50,ARKK
@@ -32927,6 +33013,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Philip Bermingham,115.2812953181483,SMA50,ARKK
 2021-01-13,Philip Bermingham,116.30946074054496,SMA50,ARKK
 2021-01-14,Philip Bermingham,117.36134501898556,SMA50,ARKK
+2021-01-15,Philip Bermingham,118.41035774814945,SMA50,ARKK
 2019-12-27,Tony Quatrale,,SMA50,ARKG
 2019-12-30,Tony Quatrale,,SMA50,ARKG
 2019-12-31,Tony Quatrale,,SMA50,ARKG
@@ -33193,6 +33280,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Tony Quatrale,86.75899526691612,SMA50,ARKG
 2021-01-13,Tony Quatrale,87.53437363945794,SMA50,ARKG
 2021-01-14,Tony Quatrale,88.35265254040141,SMA50,ARKG
+2021-01-15,Tony Quatrale,89.19183208339486,SMA50,ARKG
 2019-06-03,Sam Akhtar,,SMA50,AMC
 2019-06-04,Sam Akhtar,,SMA50,AMC
 2019-06-05,Sam Akhtar,,SMA50,AMC
@@ -33604,6 +33692,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Sam Akhtar,3.0925999879837036,SMA50,AMC
 2021-01-13,Sam Akhtar,3.093199987411499,SMA50,AMC
 2021-01-14,Sam Akhtar,3.0907999897003173,SMA50,AMC
+2021-01-15,Sam Akhtar,3.086799988746643,SMA50,AMC
 2020-12-10,Alisia Lalji,,SMA50,ABNB
 2020-12-11,Alisia Lalji,,SMA50,ABNB
 2020-12-14,Alisia Lalji,,SMA50,ABNB
@@ -33629,6 +33718,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Alisia Lalji,,SMA50,ABNB
 2021-01-13,Alisia Lalji,,SMA50,ABNB
 2021-01-14,Alisia Lalji,,SMA50,ABNB
+2021-01-15,Alisia Lalji,,SMA50,ABNB
 2020-12-11,Julien Guichandut,,SMA50,ABCL
 2020-12-14,Julien Guichandut,,SMA50,ABCL
 2020-12-15,Julien Guichandut,,SMA50,ABCL
@@ -33653,6 +33743,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Julien Guichandut,,SMA50,ABCL
 2021-01-13,Julien Guichandut,,SMA50,ABCL
 2021-01-14,Julien Guichandut,,SMA50,ABCL
+2021-01-15,Julien Guichandut,,SMA50,ABCL
 2019-06-03,Kerry Edwards,,SMA50,AAPL
 2019-06-04,Kerry Edwards,,SMA50,AAPL
 2019-06-05,Kerry Edwards,,SMA50,AAPL
@@ -34064,6 +34155,7 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Kerry Edwards,123.47267058973038,SMA50,AAPL
 2021-01-13,Kerry Edwards,123.86942882235235,SMA50,AAPL
 2021-01-14,Kerry Edwards,124.29600611134488,SMA50,AAPL
+2021-01-15,Kerry Edwards,124.59273770158973,SMA50,AAPL
 2019-06-03,Lindsay Black,,SMA50,AAL
 2019-06-04,Lindsay Black,,SMA50,AAL
 2019-06-05,Lindsay Black,,SMA50,AAL
@@ -34475,3 +34567,4 @@ Date,Name,Price,Time,Ticker
 2021-01-12,Lindsay Black,14.774200019836426,SMA50,AAL
 2021-01-13,Lindsay Black,14.853600025177002,SMA50,AAL
 2021-01-14,Lindsay Black,14.943400020599364,SMA50,AAL
+2021-01-15,Lindsay Black,15.042600021362304,SMA50,AAL
