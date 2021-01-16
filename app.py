@@ -8,6 +8,8 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Output, Input 
 import dash_table as dt
 import dash_auth
+import plotly.graph_objs as go
+
 
 VALID_USERNAME_PASSWORD_PAIRS = {'toty': '123toty'}
 
@@ -295,7 +297,8 @@ def tab4():
             html.Label(["Select the stock", dcc.Dropdown(id='stockDropDown', multi=False, value='')],style = {"width": "40%"}),
             html.Br()
         ], style={"width": "50%", 'margin-left':10}),
-        dcc.Graph(id='stockChart')        
+        dcc.Graph(id='stockChart', figure = {"layout": {"height": 700}}
+        )
         ])
     return layout
     
@@ -319,16 +322,123 @@ def update_date_dropdown(name):
                 Input('indDropDown', 'value')])  
 def display_value(value1, value2):
     dff = historydf[(historydf['Ticker']==value1) & (historydf['Name']==value2)]
-    fig = px.line(dff, x='Date', y='Price', color='Time', title='', template='plotly_dark').update_layout(
-                                   {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-                                    'paper_bgcolor': 'rgba(0, 0, 0, 0)'
-                                    }).update_layout(
-                                    font_color="white",
-                                    title_font_color="orange",
-                                    legend_title_font_color="white"
-                                )
+    dff.set_index('Date',inplace=True)
+    #fig = px.line(dff, x='Date', y='Price', color='Time', title='', template='plotly_dark').update_layout(
+    #                              {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+    #                                'paper_bgcolor': 'rgba(0, 0, 0, 0)'
+    #                                }).update_layout(
+    #                                font_color="white",
+    #                                title_font_color="orange",
+    #                                legend_title_font_color="white"
+    #                            )
+
+
+    trace1 = {
+    'x': dff.index,
+    'open': dff.Open,
+    'close': dff.Close,
+    'high': dff.High,
+    'low': dff.Low,
+    'type': 'candlestick',
+    'name': 'Candle stick plot',
+    'showlegend': True}
+    
+    trace2 = {
+    'x': dff.index,
+    'y': dff.SMA20,
+    'type': 'scatter',
+    'mode': 'lines',
+    'line': {
+        'width': 1,
+        'color': 'pink'
+            },
+    'name': 'SimpleMovingAverage20'}
+    
+    trace3 = {
+    'x': dff.index,
+    'y': dff.SMA50,
+    'type': 'scatter',
+    'mode': 'lines',
+    'line': {
+        'width': 1,
+        'color': 'yellow'
+            },
+    'name': 'SimpleMovingAverage50'}
+    
+    trace4 = {
+    'x': dff.index,
+    'y': dff['PriceBeforeInvestment'],
+    'type': 'scatter',
+    'mode': 'lines',
+    'line': {
+        'width': 2,
+        'color': 'gray'
+            },
+    'name': 'PriceBeforeInvestment'}
+    
+    trace5 = {
+    'x': dff.index,
+    'y': dff['PriceAfterInvestment'],
+    'type': 'scatter',
+    'mode': 'lines',
+    'line': {
+        'width': 2,
+        'color': 'red'
+            },
+    'name': 'PriceBeforeInvestment'}
+    
+    data = [trace1, trace2, trace3, trace4, trace5]
+    
+    layout = dict(
+        yaxis= dict(
+            fixedrange = False,
+        ),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        title='Stock time series with SMA plots',
+        font=dict(
+            color="red"
+        ),
+        xaxis=dict(
+            rangeselector=dict(
+                buttons=list([
+                    dict(count=7,
+                         label='1w',
+                         step='day',
+                         stepmode='backward'),
+                    dict(count=1,
+                         label='1m',
+                         step='month',
+                         stepmode='backward'),
+                    dict(count=6,
+                         label='6m',
+                         step='month',
+                         stepmode='backward'),
+                    dict(count=1,
+                        label='YTD',
+                        step='year',
+                        stepmode='todate'),
+                    dict(count=1,
+                        label='1y',
+                        step='year',
+                        stepmode='backward'),
+                    dict(step='all')
+                ])
+            ),
+        rangeslider=dict(
+            visible = True
+            ),
+        type='date'
+        )
+    )
+    
+    fig = go.Figure(data=data, layout=layout )
+    fig.update_xaxes(showgrid=True, zeroline=False, linewidth=2, linecolor='gray', gridcolor='rgb(55,55,55)', mirror=True)
+    fig.update_yaxes(showgrid=True, zeroline=False, linewidth=2, linecolor='gray', gridcolor='rgb(55,55,55)', mirror=True, scaleanchor = "x",
+    scaleratio = 1)
 
     return fig
+
 
 
 @app.callback(Output('compDropDown', 'value'),
