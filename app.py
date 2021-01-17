@@ -100,6 +100,7 @@ date = inddf['Date'].unique().max()
 inddf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
 
 ledger = pd.read_excel(ledgerFile, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
+ledger['Date'] = ledger['Date'].dt.date
 live = ledger[ledger['Status']=='Y']
 
 livedf = live[['Name','Ticker Name']]
@@ -112,9 +113,9 @@ names = list(livedict.keys())
 industrydf = live.groupby('Industry').size().reset_index()
 industrydf.columns = ['Industry', 'Count']
 leaderboard = inddf[inddf['Date']== str(date)].sort_values(by=['Total', 'Name'], ascending=False)
-leaderboard.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
+leaderboard.columns = ['Name', 'Stocks/ETFs', 'Cash', 'Total', 'Date']
 leaderboard.insert(0, 'Rank', range(1, 1 + len(leaderboard)))
-leaderboard = leaderboard[['Rank', 'Name', 'Stocks', 'Cash', 'Total']]
+leaderboard = leaderboard[['Rank', 'Name', 'Stocks/ETFs', 'Cash', 'Total']]
 columns = [{"name": i, "id": i} for i in leaderboard.columns]
 leaderdf = leaderboard[:5].sort_values(by=['Total'], ascending=True)
 
@@ -166,56 +167,65 @@ def render_content(tab):
 
 def tab1():
     layout = html.Div([
+        dcc.Loading(type = 'dot', children = 
+            html.Div([
+                html.H5('Growth - DAA Portfolio vs CPP Total Fund vs S&P 500 Index', style = {'color': 'orange'}),
+                dcc.Graph(id='totLineChart', figure={'layout' : {'height': 420}}, style={"width": '80%'}),
+                dbc.Card([
+                    dbc.CardBody(
+                        [
+                            dbc.ListGroupItem("Daily Changes", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
+                            dbc.ListGroupItem("DAA Portfolio : " + str(totPercent) + "%" ,color=totColor, style={'fontSize': '13px', 'textAlign': 'center'}),
+                            dbc.ListGroupItem("CPP Total Fund : " + str(cppPercent) + "%" ,color=cppColor, style={'fontSize': '13px', 'textAlign': 'center'}),
+                            dbc.ListGroupItem("S&P 500 Index : " + str(spPercent) + "%" ,color=spColor, style={'fontSize': '13px', 'textAlign': 'center'}),
+                        ], style={'backgroundColor': 'rgba(0, 0, 0, 0)', 'padding-top': '0rem', 'padding-left': '0rem', 'border':'0px solid black'}),
+                    dbc.CardBody(
+                        [
+                            dbc.ListGroupItem("Overall Growth", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
+                            dbc.ListGroupItem("DAA Portfolio : " + str(totGrowth) + '%',color=totGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
+                            dbc.ListGroupItem("CPP Total Fund : " + str(cppGrowth) + '%',color=cppGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
+                            dbc.ListGroupItem("S&P 500 Index : " + str(spGrowth) + '%',color=spGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
+                            dbc.ListGroupItem("* from 4th Jan 2021", style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
+                        ], style={'backgroundColor': 'rgba(0, 0, 0, 0)', 'padding-top': '0rem', 'padding-left': '0rem', 'border':'0px solid black'}),
+                    ],style={"width": "17%", 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', })
+                ], className = 'row', style = {'margin-left':0})
+            ),
 
-        html.Div([
-            dcc.Graph(id='totLineChart', figure={'layout' : {'height': 420}}, style={"width": '80%'}),
-
-            dbc.Card([
-                dbc.CardBody(
-                    [
-                        dbc.ListGroupItem("Daily Changes", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
-                        dbc.ListGroupItem("DAA Portfolio : " + str(totPercent) + "%" ,color=totColor, style={'fontSize': '13px', 'textAlign': 'center'}),
-                        dbc.ListGroupItem("CPP Total Fund : " + str(cppPercent) + "%" ,color=cppColor, style={'fontSize': '13px', 'textAlign': 'center'}),
-                        dbc.ListGroupItem("S&P 500 Index : " + str(spPercent) + "%" ,color=spColor, style={'fontSize': '13px', 'textAlign': 'center'}),
-                    ], style={'backgroundColor': 'rgba(0, 0, 0, 0)', 'padding-top': '0rem', 'padding-left': '0rem', 'border':'0px solid black'}),
-                dbc.CardBody(
-                    [
-                        dbc.ListGroupItem("Overall Growth", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
-                        dbc.ListGroupItem("DAA Portfolio : " + str(totGrowth) + '%',color=totGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
-                        dbc.ListGroupItem("CPP Total Fund : " + str(cppGrowth) + '%',color=cppGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
-                        dbc.ListGroupItem("S&P 500 Index : " + str(spGrowth) + '%',color=spGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
-                        dbc.ListGroupItem("* from 4th Jan 2021", style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
-                    ], style={'backgroundColor': 'rgba(0, 0, 0, 0)', 'padding-top': '0rem', 'padding-left': '0rem', 'border':'0px solid black'}),
-                ],style={"width": "17%", 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'margin-left':30})
-            ], className = 'row'),
-
-        html.Div([
-            html.Div
-                ([dcc.Graph(id='leaderBarChart', figure={'layout' : {'height': 450}})], style = {'margin-left':30}),
-            html.Div
-                ([dbc.Card([
-                        dbc.CardBody([
-                            dbc.ListGroupItem("Total Amount (Stocks + Cash)", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
-                            dbc.ListGroupItem('1 - ' + str(leaderdf.iloc[4]['Name']) + ' : ' + str(round(leaderdf.iloc[4]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 60, 110, 100)'}),
-                            dbc.ListGroupItem('2 - ' + str(leaderdf.iloc[3]['Name']) + ' : ' + str(round(leaderdf.iloc[3]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 70, 120, 100)'}),
-                            dbc.ListGroupItem('3 - ' + str(leaderdf.iloc[2]['Name']) + ' : ' + str(round(leaderdf.iloc[2]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 80, 130, 100)'}),
-                            dbc.ListGroupItem('4 - ' + str(leaderdf.iloc[1]['Name']) + ' : ' + str(round(leaderdf.iloc[1]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 90, 140, 100)'}),
-                            dbc.ListGroupItem('5 - ' + str(leaderdf.iloc[0]['Name']) + ' : ' + str(round(leaderdf.iloc[0]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 100, 150, 100)'}),
-                            dbc.ListGroupItem("* as of " +  str(date) + ' (opening prices)', style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
-                            ]),
-                        ], style = {'margin-left':30, 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black'})
-                ], style = {'padding-top': '4rem', 'margin-left': 30, 'width': 450}),
-            ], className = 'row'),
-
-        html.Div
-                ([dcc.Graph(id='industryChart', figure={'layout' : {'height': 500}})
-            ], style = {'margin-left':30, 'width': '60%'}),
-            
-        ])
+        dcc.Loading(type = 'dot', children =
+            html.Div([
+                html.Br(),
+                html.H5('Leaderboard', style = {'color': 'orange'}),
+                html.Div
+                    ([dcc.Graph(id='leaderBarChart', figure={'layout' : {'height': 450}})], style = {'margin-left':30}),
+                html.Div
+                    ([dbc.Card([
+                            dbc.CardBody([
+                                dbc.ListGroupItem("Total Amount (Stocks + Cash)", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
+                                dbc.ListGroupItem('1 - ' + str(leaderdf.iloc[4]['Name']) + ' : ' + str(round(leaderdf.iloc[4]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 60, 110, 100)'}),
+                                dbc.ListGroupItem('2 - ' + str(leaderdf.iloc[3]['Name']) + ' : ' + str(round(leaderdf.iloc[3]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 70, 120, 100)'}),
+                                dbc.ListGroupItem('3 - ' + str(leaderdf.iloc[2]['Name']) + ' : ' + str(round(leaderdf.iloc[2]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 80, 130, 100)'}),
+                                dbc.ListGroupItem('4 - ' + str(leaderdf.iloc[1]['Name']) + ' : ' + str(round(leaderdf.iloc[1]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 90, 140, 100)'}),
+                                dbc.ListGroupItem('5 - ' + str(leaderdf.iloc[0]['Name']) + ' : ' + str(round(leaderdf.iloc[0]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 100, 150, 100)'}),
+                                dbc.ListGroupItem("* as of " +  str(date) + ' (opening prices)', style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
+                                ]),
+                            ], style = {'margin-left':30, 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black'})
+                    ], style = {'padding-top': '4rem', 'margin-left': 30, 'width': 450}),
+                ], className = 'row', style = {'margin-left':0})
+            ),
+        
+        dcc.Loading(type = 'dot', children =
+            html.Div([
+                html.Br(),
+                html.H5('Industry Distribution', style = {'color': 'orange'}),
+                dcc.Graph(id='industryChart', figure={'layout' : {'height': 500}})
+                ], style = {'margin-left':0, 'width': '60%'}),
+            )
+            ], style = {'margin-top': 25})
     return layout
 
 def tab2():
     layout = html.Div([
+        html.H5('Comparison of stock/ETF growth', style = {'color': 'orange'}),
         html.Br(),
         dbc.Button('Select All', id='btn-nclicks-1', color = 'info', outline=True, n_clicks=0, size="sm", className="mr-1"),
         dbc.Button('Deselect All', id='btn-nclicks-2', color = 'warning', outline=True, n_clicks=0, size="sm", className="mr-1"),
@@ -227,14 +237,18 @@ def tab2():
                         # value=comparisonList,
                         options=[{'label': x, 'value': x} for x in sorted(inddf['Name'].unique())]
                     ),
-        dcc.Graph(id='compLineChart', figure={}), 
+        dcc.Loading(type = 'dot', children =
+            dcc.Graph(id='compLineChart', figure={})
+            ),
         html.Br(),
-        ], style={'margin-left':40, 'margin-right':40})
+        ], style={'margin-left':0, 'margin-top':25})
     return layout
 
 def tab3():
     layout = html.Div([
         html.Br(),
+        html.H5('Leaderboard', style = {'color': 'orange'}),
+        html.Label('As of date : ' + str(date) , style = {'font-style': 'italic'}),
         html.Br(),
         html.Div([
             dt.DataTable(
@@ -250,8 +264,8 @@ def tab3():
                     'fontWeight': 'bold',
                     'border': '1px solid black'
                 })
-            ],style={"width": "60%", 'margin-left':10}),
-                    
+            ],style={"width": "60%", 'margin-left':0}),
+        html.Br(),
         ])
     return layout
     
@@ -269,7 +283,14 @@ def tab4():
             ],style={"width": "20%"}),
             html.Label(["Select the stock", dcc.Dropdown(id='stockDropDown', multi=False, value='')],style = {"width": "10%", 'margin-left':10}),
             ],className = 'rows'),
-        html.Div([dcc.Graph(id='stockChart', figure = {"layout": {"height": 700}})], style={'margin-left':0}),
+        html.Br(),
+        html.H5('Time series plot', style = {'color': 'orange'}),
+        html.Label('Click on the legend to toggle the visibility of lines', style = {'font-style': 'italic'}),
+        dcc.Loading(type = 'dot', children =
+            html.Div([dcc.Graph(id='stockChart', figure = {"layout": {"height": 600}})], style={'margin-left':0}),
+            ),
+        html.Br(),
+        html.H5('Ledger', style = {'color': 'orange'}),
         html.Div([ 
             dt.DataTable(
                 id='table',
@@ -295,7 +316,7 @@ def tab4():
                     'fontWeight': 'bold',
                     'border': '1px solid black'
                 }), 
-        ], style={"width": "80%", 'margin-left':60, 'display': 'inline-block'}),
+        ], style={"width": "80%", 'margin-left':0, 'margin-top':0, 'display': 'inline-block'}),
         html.Br(),
         html.Br()
         ])
@@ -340,7 +361,7 @@ def display_value(value1, value2):
     'mode': 'lines',
     'line': {
         'width': 1,
-        'color': 'pink'
+        'color': 'rgba(255,200,0,100)'
             },
     'name': 'SimpleMovingAverage20'}
     
@@ -351,7 +372,7 @@ def display_value(value1, value2):
     'mode': 'lines',
     'line': {
         'width': 1,
-        'color': 'yellow'
+        'color': 'rgba(10,170,100,100)'
             },
     'name': 'SimpleMovingAverage50'}
     
@@ -362,7 +383,7 @@ def display_value(value1, value2):
     'mode': 'lines',
     'line': {
         'width': 2,
-        'color': 'gray'
+        'color': 'rgba(16,129,181,100)'
             },
     'name': 'PriceBeforeInvestment'}
     
@@ -383,7 +404,7 @@ def display_value(value1, value2):
         yaxis= dict(fixedrange = False),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        title='Stock time series with SMA plots',
+        margin = dict(b=0, l = 10, t =30),
         #font=dict(color="red"),
         xaxis=dict(
             rangeselector=dict(
@@ -459,7 +480,7 @@ def update_rows(value):
 @app.callback(Output('totLineChart', 'figure'),
                 Input('tabs-styled-with-inline', 'value'))  
 def display_value(value):
-    fig = px.line(finaldf, x='Date', y='Growth', color='Name', title='Growth - DAA & CPP Portfolio', template='plotly_dark').update_layout(
+    fig = px.line(finaldf, x='Date', y='Growth', color='Name', template='plotly_dark').update_layout(
                                    {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                                     'paper_bgcolor': 'rgba(0, 0, 0, 0)'
                                     }).update_layout(
@@ -474,7 +495,7 @@ def display_value(value):
 @app.callback(Output('industryChart', 'figure'),
                 Input('tabs-styled-with-inline', 'value'))  
 def display_value(value):
-    fig = px.pie(industrydf, values='Count', names='Industry', title='Industry Distribution', template='plotly_dark').update_layout(
+    fig = px.pie(industrydf, values='Count', names='Industry', template='plotly_dark').update_layout(
                                    {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                                     'paper_bgcolor': 'rgba(0, 0, 0, 0)'}).update_layout(
                                     font_color="white",
@@ -487,7 +508,7 @@ def display_value(value):
 @app.callback(Output('leaderBarChart', 'figure'),
                 Input('tabs-styled-with-inline', 'value'))  
 def display_value(value):
-    fig = px.bar(leaderdf, x=["Stocks", "Cash"], y='Name', title='Leaderboard', orientation = 'h', template='plotly_dark', hover_data=["Total"]).update_layout(
+    fig = px.bar(leaderdf, x=["Stocks/ETFs", "Cash"], y='Name', orientation = 'h', template='plotly_dark', hover_data=["Total"]).update_layout(
                                    {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                                     'paper_bgcolor': 'rgba(0, 0, 0, 0)'}).update_layout(
                                     font_color="white",
@@ -500,7 +521,7 @@ def display_value(value):
                 Input('compDropDown', 'value'))
 def display_value(value):
     dff = inddf[inddf['Name'].isin(value)]
-    fig = px.line(dff, x='Date', y='Total', color='Name', title='Comparison of stock growth', template='plotly_dark').update_layout(
+    fig = px.line(dff, x='Date', y='Total', color='Name', template='plotly_dark').update_layout(
                                 {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                                 'paper_bgcolor': 'rgba(0, 0, 0, 0)'}).update_layout(
                                     font_color="white",
