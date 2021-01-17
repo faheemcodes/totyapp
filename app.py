@@ -258,16 +258,19 @@ def tab3():
 def tab4():
     layout = html.Div([
         html.Br(),
-        html.Label(["Select the name",
-            dcc.Dropdown(
-                            id='indDropDown', 
-                            multi=False, 
-                            value="",
-                            options=[{'label': x, 'value': x} for x in sorted(inddf['Name'].unique())]
-                        ),
-        ],style={"width": "20%", 'margin-left':10}),
-        html.Br(),
         html.Div([
+            html.Label(["Select the name",
+                dcc.Dropdown(
+                                id='indDropDown', 
+                                multi=False, 
+                                value="",
+                                options=[{'label': x, 'value': x} for x in sorted(inddf['Name'].unique())]
+                            ),
+            ],style={"width": "20%"}),
+            html.Label(["Select the stock", dcc.Dropdown(id='stockDropDown', multi=False, value='')],style = {"width": "10%", 'margin-left':10}),
+            ],className = 'rows'),
+        html.Div([dcc.Graph(id='stockChart', figure = {"layout": {"height": 700}})], style={'margin-left':0}),
+        html.Div([ 
             dt.DataTable(
                 id='table',
                 style_cell={'textAlign': 'center',
@@ -292,13 +295,9 @@ def tab4():
                     'fontWeight': 'bold',
                     'border': '1px solid black'
                 }), 
-            html.Br(),
-            html.Br(),
-            html.Label(["Select the stock", dcc.Dropdown(id='stockDropDown', multi=False, value='')],style = {"width": "40%"}),
-            html.Br()
-        ], style={"width": "50%", 'margin-left':10}),
-        dcc.Graph(id='stockChart', figure = {"layout": {"height": 700}}
-        )
+        ], style={"width": "80%", 'margin-left':60, 'display': 'inline-block'}),
+        html.Br(),
+        html.Br()
         ])
     return layout
     
@@ -323,15 +322,6 @@ def update_date_dropdown(name):
 def display_value(value1, value2):
     dff = historydf[(historydf['Ticker']==value1) & (historydf['Name']==value2)]
     dff.set_index('Date',inplace=True)
-    #fig = px.line(dff, x='Date', y='Price', color='Time', title='', template='plotly_dark').update_layout(
-    #                              {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-    #                                'paper_bgcolor': 'rgba(0, 0, 0, 0)'
-    #                                }).update_layout(
-    #                                font_color="white",
-    #                                title_font_color="orange",
-    #                                legend_title_font_color="white"
-    #                            )
-
 
     trace1 = {
     'x': dff.index,
@@ -390,15 +380,11 @@ def display_value(value1, value2):
     data = [trace1, trace2, trace3, trace4, trace5]
     
     layout = dict(
-        yaxis= dict(
-            fixedrange = False,
-        ),
+        yaxis= dict(fixedrange = False),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         title='Stock time series with SMA plots',
-        font=dict(
-            color="red"
-        ),
+        #font=dict(color="red"),
         xaxis=dict(
             rangeselector=dict(
                 buttons=list([
@@ -426,17 +412,20 @@ def display_value(value1, value2):
                 ])
             ),
         rangeslider=dict(
-            visible = True
+            visible = True,
+            yaxis = dict(
+                rangemode='auto'
+                ),
             ),
-        type='date'
+        type='date',
+        
         )
     )
     
     fig = go.Figure(data=data, layout=layout )
-    fig.update_xaxes(showgrid=True, zeroline=False, linewidth=2, linecolor='gray', gridcolor='rgb(55,55,55)', mirror=True)
-    fig.update_yaxes(showgrid=True, zeroline=False, linewidth=2, linecolor='gray', gridcolor='rgb(55,55,55)', mirror=True, scaleanchor = "x",
-    scaleratio = 1)
-
+    fig.update_xaxes(color='white',rangeslider_bgcolor = '#404040', fixedrange = False, showgrid=True, zeroline=False, linewidth=2, linecolor='gray', gridcolor='rgb(55,55,55)', mirror=True)
+    fig.update_yaxes(color='white',fixedrange = False, showgrid=True, zeroline=False, linewidth=2, linecolor='gray', gridcolor='rgb(55,55,55)', mirror=True, scaleanchor = "x", scaleratio = 1)
+    fig.update_layout(legend=dict(font=dict(color='white')), title=dict(font=dict(color='orange')))
     return fig
 
 
