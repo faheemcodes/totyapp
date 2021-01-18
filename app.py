@@ -101,6 +101,7 @@ inddf.columns = ['Name', 'Stocks', 'Cash', 'Total', 'Date']
 
 ledger = pd.read_excel(ledgerFile, sheet_name = 'Ledger', skiprows = 4, converters= {'Date': pd.to_datetime})
 ledger['Date'] = ledger['Date'].dt.date
+ledger.sort_values(by=['Date'], inplace=True)
 live = ledger[ledger['Status']=='Y']
 
 livedf = live[['Name','Ticker Name']]
@@ -139,7 +140,7 @@ tab_selected_style = {
 app.layout = html.Div([
     html.Div(style={'height':75, 'margin-left':400, 'margin-right':400}, children = [
         html.Br(),
-        html.H3('Trade of the year !', style={"textAlign": "center", 'fontColor': 'white', 'margin-top':1, 'padding-top': '0rem'}),
+        html.H3('Trade of the year !', style={"textAlign": "center", 'color': 'white', 'margin-top':1, 'padding-top': '0rem'}),
         html.Br()
         ], className = 'rows'),
 
@@ -167,9 +168,10 @@ def render_content(tab):
 
 def tab1():
     layout = html.Div([
+        html.H5('Growth - DAA Portfolio vs CPP Total Fund vs S&P 500 Index', style = {'color': 'orange'}),
+        html.Label('The daily prices are indexed to a common starting point of 1 based on the opening prices on 4th Jan 2021. CPP Total Fund values are reported with a one-day lag.', style = {'font-style': 'italic'}),
         dcc.Loading(type = 'dot', children = 
             html.Div([
-                html.H5('Growth - DAA Portfolio vs CPP Total Fund vs S&P 500 Index', style = {'color': 'orange'}),
                 dcc.Graph(id='totLineChart', figure={'layout' : {'height': 420}}, style={"width": '80%'}),
                 dbc.Card([
                     dbc.CardBody(
@@ -187,20 +189,20 @@ def tab1():
                             dbc.ListGroupItem("S&P 500 Index : " + str(spGrowth) + '%',color=spGrowthColor, style={'fontSize': '13px', 'textAlign': 'center'}),
                             dbc.ListGroupItem("* from 4th Jan 2021", style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
                         ], style={'backgroundColor': 'rgba(0, 0, 0, 0)', 'padding-top': '0rem', 'padding-left': '0rem', 'border':'0px solid black'}),
-                    ],style={"width": "17%", 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', })
+                    ],style={"width": "17%", 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'})
                 ], className = 'row', style = {'margin-left':0})
             ),
-
+        html.Br(),
+        html.H5('Leaderboard', style = {'color': 'orange'}),
+        html.Label('The leaderboard is last updated on ' +  str(date) + ' (opening prices). Check the leaderboard tab for the full table.', style = {'font-style': 'italic'}),
         dcc.Loading(type = 'dot', children =
             html.Div([
-                html.Br(),
-                html.H5('Leaderboard', style = {'color': 'orange'}),
                 html.Div
-                    ([dcc.Graph(id='leaderBarChart', figure={'layout' : {'height': 450}})], style = {'margin-left':30}),
+                    ([dcc.Graph(id='leaderBarChart', figure={'layout' : {'height': 450, 'margin' : {'t': 500}}})], style = {'margin-left':10}),
                 html.Div
                     ([dbc.Card([
                             dbc.CardBody([
-                                dbc.ListGroupItem("Total Amount (Stocks + Cash)", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
+                                dbc.ListGroupItem("Total Amount (Stocks/ETFs + Cash)", style={'color':'rgba(160, 160, 160, 100)', 'border': '0px solid black', 'fontWeight': 'bold', 'textAlign': 'center', 'backgroundColor': 'rgba(0, 0, 0, 0)'}),
                                 dbc.ListGroupItem('1 - ' + str(leaderdf.iloc[4]['Name']) + ' : ' + str(round(leaderdf.iloc[4]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 60, 110, 100)'}),
                                 dbc.ListGroupItem('2 - ' + str(leaderdf.iloc[3]['Name']) + ' : ' + str(round(leaderdf.iloc[3]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 70, 120, 100)'}),
                                 dbc.ListGroupItem('3 - ' + str(leaderdf.iloc[2]['Name']) + ' : ' + str(round(leaderdf.iloc[2]['Total']/1000,1)) + ' k USD' , style={'fontSize': '13px', 'fontWeight': 'bold', 'border': '0px solid black', 'backgroundColor': 'rgba(0, 80, 130, 100)'}),
@@ -209,14 +211,15 @@ def tab1():
                                 dbc.ListGroupItem("* as of " +  str(date) + ' (opening prices)', style={'fontSize': '13px', 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black', 'padding-top':'0rem'}),
                                 ]),
                             ], style = {'margin-left':30, 'backgroundColor': 'rgba(0, 0, 0, 0)', 'border': '0px solid black'})
-                    ], style = {'padding-top': '4rem', 'margin-left': 30, 'width': 450}),
+                    ], style = {'padding-top': '1rem', 'margin-left': 30, 'width': 450}),
                 ], className = 'row', style = {'margin-left':0})
             ),
         
+        html.Br(),
+        html.H5('Industry Distribution', style = {'color': 'orange'}),
+        html.Label('Click on the labels in the legends to toggle the visibility. Click the ETF label to view the distribution of the stocks alone.', style = {'font-style': 'italic'}),      
         dcc.Loading(type = 'dot', children =
             html.Div([
-                html.Br(),
-                html.H5('Industry Distribution', style = {'color': 'orange'}),
                 dcc.Graph(id='industryChart', figure={'layout' : {'height': 500}})
                 ], style = {'margin-left':0, 'width': '60%'}),
             )
@@ -226,6 +229,7 @@ def tab1():
 def tab2():
     layout = html.Div([
         html.H5('Comparison of stock/ETF growth', style = {'color': 'orange'}),
+        html.Label('Add more names to the selection to view the comparison in growth', style = {'font-style': 'italic'}),      
         html.Br(),
         dbc.Button('Select All', id='btn-nclicks-1', color = 'info', outline=True, n_clicks=0, size="sm", className="mr-1"),
         dbc.Button('Deselect All', id='btn-nclicks-2', color = 'warning', outline=True, n_clicks=0, size="sm", className="mr-1"),
