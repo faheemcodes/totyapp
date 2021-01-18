@@ -331,8 +331,10 @@ def tab4():
 def update_date_dropdown(name):
     if name == '':
         val = ''
-    else:
+    elif len(historydf[historydf['Name']==name]['Ticker'].unique())==1:
         val = historydf[historydf['Name']==name]['Ticker'].unique()[0]
+    else:
+        val = historydf[historydf['Name']==name]['Ticker'].unique()
         
     return [{'label': i, 'value': i} for i in livedict[name]], val
 
@@ -404,7 +406,7 @@ def display_value(value1, value2):
         yaxis= dict(fixedrange = False),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        margin = dict(b=0, l = 10, t =30),
+        margin = dict(b=0, l = 0, t =30),
         #font=dict(color="red"),
         xaxis=dict(
             rangeselector=dict(
@@ -448,8 +450,6 @@ def display_value(value1, value2):
     fig.update_yaxes(color='white',fixedrange = False, showgrid=True, zeroline=False, linewidth=2, linecolor='gray', gridcolor='rgb(55,55,55)', mirror=True, scaleanchor = "x", scaleratio = 1)
     fig.update_layout(legend=dict(font=dict(color='white')), title=dict(font=dict(color='orange')))
     return fig
-
-
 
 @app.callback(Output('compDropDown', 'value'),
               Input('btn-nclicks-1', 'n_clicks'),
