@@ -231,16 +231,16 @@ def tab2():
         html.H5('Comparison of stock/ETF growth', style = {'color': 'orange'}),
         html.Label('Add more names to the selection to view the comparison in growth', style = {'font-style': 'italic'}),      
         html.Br(),
-        dbc.Button('Select All', id='btn-nclicks-1', color = 'info', outline=True, n_clicks=0, size="sm", className="mr-1"),
-        dbc.Button('Deselect All', id='btn-nclicks-2', color = 'warning', outline=True, n_clicks=0, size="sm", className="mr-1"),
-        html.Br(),
-        html.Br(),
         dcc.Dropdown(
                         id='compDropDown', 
                         multi=True, 
                         # value=comparisonList,
                         options=[{'label': x, 'value': x} for x in sorted(inddf['Name'].unique())]
                     ),
+        html.Br(),
+        dbc.Button('Select All', id='btn-nclicks-1', color = 'info', outline=True, n_clicks=0, size="sm", className="mr-1"),
+        dbc.Button('Deselect All', id='btn-nclicks-2', color = 'warning', outline=True, n_clicks=0, size="sm", className="mr-1"),
+        html.Br(),
         dcc.Loading(type = 'dot', children =
             dcc.Graph(id='compLineChart', figure={})
             ),
