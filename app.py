@@ -31,10 +31,10 @@ cppdf = pd.read_csv('assets/totalFund.csv')
 sp500 = pd.read_csv('assets/sp500.csv')
 historydf = pd.read_csv('assets/stockhistory.csv')
 
-#cppdf = cppdf[cppdf['Date'] >= str(start_date)]
+cppdf = cppdf[cppdf['Date'] >= str(start_date)]
 totdf['Name'] = 'DAA Portfolio'
 
-cppdf['Name'], sp500['Name'] = 'CPP Portfolio', 'S&P 500 Index'
+cppdf['Name'], sp500['Name'] = 'CPP Total Fund', 'S&P 500 Index'
 cppdf['stockSum'], sp500['stockSum'] = '', ''
 cppdf['cashSum'], sp500['cashSum'] = '', ''
 base_price = cppdf.iloc[0]['totalSum']
