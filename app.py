@@ -116,7 +116,7 @@ industrydf.columns = ['Industry', 'Count']
 leaderboard = inddf[inddf['Date']== str(date)].sort_values(by=['Total', 'Name'], ascending=False)
 leaderboard.columns = ['Name', 'Stocks/ETFs', 'Cash', 'Total', 'Date']
 leaderboard.insert(0, 'Rank', range(1, 1 + len(leaderboard)))
-leaderboard = leaderboard[['Rank', 'Name', 'Stocks/ETFs', 'Cash', 'Total']]
+leaderboard = leaderboard[['Rank', 'Name', 'Stocks/ETFs', 'Cash', 'Total']].round(1)
 columns = [{"name": i, "id": i} for i in leaderboard.columns]
 leaderdf = leaderboard[:5].sort_values(by=['Total'], ascending=True)
 
